@@ -14,7 +14,6 @@ theme:
     - navigation.path
     - navigation.tracking
   icon:
-    # logo: assets/images/devops
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -28,7 +27,7 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
-  logo: assets/images/devops.png
+  # logo: assets/images/devops.png
 
 markdown_extensions:
   - admonition
@@ -80,7 +79,7 @@ extra_css:
 nav:
   - Home: index.md
   - Versions:
-    - 2024.1: ./versions/2024.2.md
+    - 2024.2: ./versions/2024.2.md
   - Disclaimer: disclaimer.md
   - Appendix:
     - OhMyZsh: ./appendix/ohmyzsh.md
