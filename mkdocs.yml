@@ -82,3 +82,5 @@ nav:
   - Versions:
     - 2024.1: ./versions/2024.2.md
   - Disclaimer: disclaimer.md
+  - Appendix:
+    - OhMyZsh: ./appendix/ohmyzsh.md
