@@ -90,6 +90,10 @@ nav:
     - Dedução: ./logic/deduction.md
     - Indução: ./logic/induction.md
     - Paradoxos: ./logic/paradoxes.md
+  - Matemática:
+    - Conjuntos: ./math/sets.md
+    - Números: ./math/numbers.md
+    - Relações: ./math/relations.md
   - Disclaimer: disclaimer.md
   - Appendix:
     - OhMyZsh: ./appendix/ohmyzsh.md
