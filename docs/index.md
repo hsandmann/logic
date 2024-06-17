@@ -1,4 +1,4 @@
-# [Análise e estruturação lógica]
+# [Análise e estruturação lógica](#análise-e-estruturação-lógica)
 
 ???+ info inline end
 
@@ -6,7 +6,7 @@
 
     *Semestre: 1º semestre*
 
-## [Ementa]
+## [Ementa](#ementa)
 
 - Leis da lógica;
 - Proposições e conectivos lógicos;
@@ -20,7 +20,7 @@
 - Quantificadores;
 - Teoria dos Conjuntos.
 
-## [Conteúdo Programático]
+## [Conteúdo Programático](#conteúdo-programático)
 
 - Introdução à lógica: o que é lógica, sua importância e suas aplicações;
 - Proposições simples e compostas, conectivos lógicos, tabelas-verdade e exercícios práticos;
@@ -30,7 +30,7 @@
 - Métodos para testar a validade de argumentos;
 - Quantificadores lógicos, operações e teoria dos conjuntos.
 
-## [Competências]
+## [Competências](#competências)
 
 !!! success "C4"
 
@@ -40,7 +40,7 @@
 
     Identificar e resolver desafios algorítmicos respeitando as limitações computacionais, através da seleção e/ou desenvolvimento de algoritmos adequados e viáveis.
 
-## [Habilidades]
+## [Habilidades](#habilidades)
 
 - Reconhecer e aplicar as leis da lógica;
 - Identificar e analisar proposições simples e compostas;
@@ -50,24 +50,24 @@
 - Determinar se argumentos são válidos ou inválidos;
 - Resolver problemas envolvendo conjuntos e aplicar propriedades dos conjuntos em contextos práticos.
 
-## [Metodologia]
+## [Metodologia](#metodologia)
 
 - Exposição dialogada;
 - Exercícios práticos;
 - Aprendizagem baseada em problemas.
 
 
-## [Critérios de Avaliação]
+## [Critérios de Avaliação](#critérios-de-avaliação)
 
 A avaliação é processual, formativa e classificatória, para estimular o aprendizado com autonomia. Os instrumentos de avaliação são diversificados nos respectivos pesos na composição dos resultados:
 
-Atividades de participação mensais, totalizando 5 aplicações no semestre. São caracterizadas como um processo de avaliação processual e formativo, que corresponde a 30% da média final. Essas atividades são diversificadas e relacionadas aos conteúdos programáticos desenvolvidos progressivamente no decorrer da disciplina. Os instrumentos se relacionam a resolução de problemas, estudos de caso; pesquisas; vivências práticas; trabalhos em grupos; resolução de problemas de negócios, entre outros formatos, nos quais os conteúdos, visto como insumos, são trabalhados de modo contextualizado e significativo, considerando os conhecimentos prévios dos alunos como ponto de partida para a construção de novos conhecimentos.
+- **Atividades de participação mensais**, totalizando 5 aplicações no semestre. São caracterizadas como um processo de avaliação processual e formativo, que corresponde a 30% da média final. Essas atividades são diversificadas e relacionadas aos conteúdos programáticos desenvolvidos progressivamente no decorrer da disciplina. Os instrumentos se relacionam a resolução de problemas, estudos de caso; pesquisas; vivências práticas; trabalhos em grupos; resolução de problemas de negócios, entre outros formatos, nos quais os conteúdos, visto como insumos, são trabalhados de modo contextualizado e significativo, considerando os conhecimentos prévios dos alunos como ponto de partida para a construção de novos conhecimentos.
 
-Avaliação intermediária, AV1. Caracterizada como um processo de avaliação formativa, corresponde a 20% da média final. A sua intencionalidade está associada à resolução de problemas de negócios, análises críticas e articulação de saberes – prévios e novos - de modo que se traduzam em ações relacionadas às competências indicadas no componente curricular.
+- **Avaliação intermediária, AV1.** Caracterizada como um processo de avaliação formativa, corresponde a 20% da média final. A sua intencionalidade está associada à resolução de problemas de negócios, análises críticas e articulação de saberes – prévios e novos - de modo que se traduzam em ações relacionadas às competências indicadas no componente curricular.
 
-Avaliação final, AV2. Organizada na perspectiva de uma avaliação classificatória, corresponde a 50% da média final. Realizada de forma individual, no formato de uma prova, que aborda todos os conteúdos, metodologias, experiências e práticas, abordadas no componente curricular no decorrer do semestre.
+- **Avaliação final, AV2.** Organizada na perspectiva de uma avaliação classificatória, corresponde a 50% da média final. Realizada de forma individual, no formato de uma prova, que aborda todos os conteúdos, metodologias, experiências e práticas, abordadas no componente curricular no decorrer do semestre.
 
-## [Bibliografia Básica]
+## [Bibliografia Básica](#bibliografia-básica)
 
 Livros:
 
@@ -77,7 +77,7 @@ Livros:
 
 3. SOUZA, Marco A. Furlan de; GOMES, Marcelo Marques; SOARES, Márcio Vieira et al. Algoritmos e lógica de programação: um texto introdutório para a engenharia. São Paulo: Cengage Learning Brasil, 2019.
 
-## [Bibliografia Complementar]
+## [Bibliografia Complementar](#bibliografia-complementar)
 
 Livros:
 
@@ -93,4 +93,4 @@ Livros:
 
 Artigos:
 
-- The Stanford Encyclopedia of Philosophy [https://plato.stanford.edu/](https://plato.stanford.edu/){:target='_blank'}
+- The Stanford Encyclopedia of Philosophy. Disponível em: [https://plato.stanford.edu/](https://plato.stanford.edu/){:target='_blank'}
