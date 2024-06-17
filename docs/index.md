@@ -1,4 +1,4 @@
-# [Análise e estruturação lógica](#análise-e-estruturação-lógica)
+# [Análise e estruturação lógica]
 
 ???+ info inline end
 
@@ -6,7 +6,7 @@
 
     *Semestre: 1º semestre*
 
-## [Ementa](#ementa)
+## [Ementa]
 
 - Leis da lógica;
 - Proposições e conectivos lógicos;
@@ -20,7 +20,7 @@
 - Quantificadores;
 - Teoria dos Conjuntos.
 
-## [Conteúdo Programático](#conteúdo-programático)
+## [Conteúdo Programático]
 
 - Introdução à lógica: o que é lógica, sua importância e suas aplicações;
 - Proposições simples e compostas, conectivos lógicos, tabelas-verdade e exercícios práticos;
@@ -30,7 +30,7 @@
 - Métodos para testar a validade de argumentos;
 - Quantificadores lógicos, operações e teoria dos conjuntos.
 
-## [Competências](#competências)
+## [Competências]
 
 !!! success "C4"
 
@@ -40,7 +40,7 @@
 
     Identificar e resolver desafios algorítmicos respeitando as limitações computacionais, através da seleção e/ou desenvolvimento de algoritmos adequados e viáveis.
 
-## [Habilidades](#habilidades)
+## [Habilidades]
 
 - Reconhecer e aplicar as leis da lógica;
 - Identificar e analisar proposições simples e compostas;
@@ -50,14 +50,14 @@
 - Determinar se argumentos são válidos ou inválidos;
 - Resolver problemas envolvendo conjuntos e aplicar propriedades dos conjuntos em contextos práticos.
 
-## [Metodologia](#metodologia)
+## [Metodologia]
 
 - Exposição dialogada;
 - Exercícios práticos;
 - Aprendizagem baseada em problemas.
 
 
-## [Critérios de Avaliação](#critérios-de-avaliação)
+## [Critérios de Avaliação]
 
 A avaliação é processual, formativa e classificatória, para estimular o aprendizado com autonomia. Os instrumentos de avaliação são diversificados nos respectivos pesos na composição dos resultados:
 
@@ -67,7 +67,7 @@ Avaliação intermediária, AV1. Caracterizada como um processo de avaliação f
 
 Avaliação final, AV2. Organizada na perspectiva de uma avaliação classificatória, corresponde a 50% da média final. Realizada de forma individual, no formato de uma prova, que aborda todos os conteúdos, metodologias, experiências e práticas, abordadas no componente curricular no decorrer do semestre.
 
-## [Bibliografia Básica](#bibliografia-básica)
+## [Bibliografia Básica]
 
 Livros:
 
@@ -77,7 +77,7 @@ Livros:
 
 3. SOUZA, Marco A. Furlan de; GOMES, Marcelo Marques; SOARES, Márcio Vieira et al. Algoritmos e lógica de programação: um texto introdutório para a engenharia. São Paulo: Cengage Learning Brasil, 2019.
 
-## [Bibliografia Complementar](#bibliografia-complementar)
+## [Bibliografia Complementar]
 
 Livros:
 
