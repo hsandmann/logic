@@ -1,4 +1,4 @@
-site_name: Anáilse e Estruturação Lógica
+site_name: Análise e Estruturação Lógica
 site_author: Sandmann, H.
 site_url: https://hsandmann.github.io/logic
 
@@ -83,6 +83,13 @@ nav:
   - Home: index.md
   - Versions:
     - 2024.2: ./versions/2024.2.md
+  - Lógica:
+    - História: ./logic/history.md
+    - Proposições: ./logic/propositions.md
+    - Argumentos: ./logic/arguments.md
+    - Dedução: ./logic/deduction.md
+    - Indução: ./logic/induction.md
+    - Paradoxos: ./logic/paradoxes.md
   - Disclaimer: disclaimer.md
   - Appendix:
     - OhMyZsh: ./appendix/ohmyzsh.md
