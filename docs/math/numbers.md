@@ -151,5 +151,112 @@ $$\mathbb{R} = \mathbb{Q} \lor \mathbb{P}$$
 $\mathbb{C}$
 
 
+
+
+$$
+\begin{align}
+    \sqrt[2]{2}  &\to ∃n \mid n^{2}=2  &\therefore &n=1.4142\dots\\
+    \sqrt[3]{1}  &\to ∃n \mid n^{3}=1  &\therefore &n=1 \\
+    \sqrt[3]{-1} &\to ∃n \mid n^{3}=-1 &\therefore &n=-1  \\
+    \sqrt[5]{-32} &\to ∃n \mid n^{5}=-32 &\therefore &n=-2 \\
+    \vdots \\
+    \sqrt[2]{-1} &\to ∃n \mid n^{2}=-1 &\therefore &n=?
+\end{align}
+$$
+
+Quando o índice do radical é par, o radicando por ser negativo?
+
+$$
+\begin{align}
+    \sqrt{-1}  &= i & &\\
+    \sqrt{-25} &= \sqrt{25.-1} = \sqrt{25}.\sqrt{-1}=5 + i\\
+    \therefore \\
+    z &= 5 + i
+\end{align}
+$$
+
+$$e^{\pi i} + 1 = 0$$
+
+$$x^2 + a = 0$$
+
+Por um tempo equações de 2o grau que não possuiam raízes em Reais foram consideradas não válidas e, então, não tratadas. Até que [Tartaglia](https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia) e [Del Ferro](https://en.wikipedia.org/wiki/Scipione_del_Ferro), que estavam trabalhando em soluções para equações de 3o grau, propuseram um algoritmo para resolver tais equações, o qual foi publicado por [Cardano](https://en.wikipedia.org/wiki/Gerolamo_Cardano) - [Ars Magna](https://en.wikipedia.org/wiki/Ars_Magna_(Cardano_book)), [1545](https://web.archive.org/web/20220201093634/http://www.filosofia.unimi.it/cardano/testi/operaomnia/vol_4_s_4.pdf). Assim a fórmula ficou conhecida como **Fórmula de Cardano**, sendo:
+
+$$
+\begin{equation}
+\begin{aligned}
+    x^3 + px + q & = 0 \\
+    \therefore x & = u + v \\
+    & ⇓ \\
+    (u + v)^3 + p(u + v) + q & = 0 \\
+    (u + v)^3 + p(u + v) + q & = 0 \\
+    u^3 + v^3 + (3uv + p)(u+v) + q & = 0 \\
+    \\
+    & \text{se} \\
+    (3uv +p) & = 0
+    \\
+    & \therefore \\
+    u^3 + v^3 + q & = 0 \\
+    u^3 + v^3 & = -q \\
+\end{aligned}
+\end{equation}
+$$
+
+Simplificando:
+$$
+\begin{cases}
+    uv & = \displaystyle -\frac{p}{3} \\
+    u^3 + v^3 & = -q
+\end{cases}
+$$
+
+Considerando-se as relações entre soma e produto de raízes ditas pelas [relações de Girard](https://pt.wikipedia.org/wiki/Identidades_de_Newton) para equações mônicas do segundo grau, é possível definir:
+$$
+\begin{align}
+    u^3v^3 & = \frac{-p^3}{27}
+\end{align}
+$$
+
+A dedução da fórmula da Cardano chega ao final com:
+$$
+\begin{align}
+    x = \displaystyle \sqrt[3]{-\frac{q}{2} + \sqrt{ \frac{q^2}{4} +\frac{p^3}{27}}} + \sqrt[3]{-\frac{q}{2} - \sqrt{ \frac{q^2}{4} +\frac{p^3}{27}}}
+\end{align}
+$$
+
+Assim, utilizando essa fórmula era possível calcular raízes de polinômios de grau 3. Porém, existia uma equação que não conseguia ser resolvida por esse método, era essa:
+
+$$
+x^3 -15x -4 = 0,
+$$
+
+[Geometric interpretation of quadratic and cubic equations](https://complex-analysis.com/content/brief_history.html){target='_blank}
+
+pois resolvendo a equação chegamos à:
+
+$$
+\begin{align}
+    x &= \displaystyle \sqrt[3]{2 + \sqrt{-121}} &+& \sqrt[3]{2-\sqrt{-121}} \\
+    x &= \displaystyle \sqrt[3]{2 + 11\sqrt{-1}} &+& \sqrt[3]{2-11\sqrt{-1}} \\
+    x &= \displaystyle 2 + \sqrt{-1} &+& 2 - \sqrt{-1} \\
+    x &= 4
+\end{align}
+$$
+
+E não tínhamos a solução para raízes quadradas de números negativos, ao menos, de forma geométrica. Um agravante, para a equação acima, é facilmente verificável que existe sim uma raiz ao menos, sendo $x=4$, pois:
+
+$$
+\begin{align}
+    4^3 -15.4 -4 & = 0 \\
+    64 - 60 -4 & = 0 \\
+    0 & = 0
+\end{align}
+$$
+
+Ou seja, existe raiz se $x=4$.
+
+
+
+
 [^1]: Bicudo, Irineu., Euclides. [Os elementos](https://www.amazon.com.br/Os-elementos-Irineu-Bicudo/dp/8571399352){target='_blank'}. Brasil: Editora Unesp, 2009.
 [^2]: Aczel MR, Aczel D and Ville M (2019) [Hero From the East: How Zero Came to the West](https://doi.org/10.3389/frym.2019.00128){target='_blank'}. Front. Young Minds. 7:128. [doi: 10.3389/frym.2019.00128](https://doi.org/10.3389/frym.2019.00128){target='_blank'}.
+[^3]: [A Brief History](https://complex-analysis.com/content/brief_history.html){target='_blank}, Complex Analysis. Acessado em 2024.
