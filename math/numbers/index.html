@@ -1018,6 +1018,89 @@
 <div class="arithmatex">\[\mathbb{R} = \mathbb{Q} \lor \mathbb{P}\]</div>
 <h2 id="complexos"><a href="#complexos">Complexos</a></h2>
 <p><span class="arithmatex">\(\mathbb{C}\)</span></p>
+<div class="arithmatex">\[
+\begin{align}
+    \sqrt[2]{2}  &amp;\to ∃n \mid n^{2}=2  &amp;\therefore &amp;n=1.4142\dots\\
+    \sqrt[3]{1}  &amp;\to ∃n \mid n^{3}=1  &amp;\therefore &amp;n=1 \\
+    \sqrt[3]{-1} &amp;\to ∃n \mid n^{3}=-1 &amp;\therefore &amp;n=-1  \\
+    \sqrt[5]{-32} &amp;\to ∃n \mid n^{5}=-32 &amp;\therefore &amp;n=-2 \\
+    \vdots \\
+    \sqrt[2]{-1} &amp;\to ∃n \mid n^{2}=-1 &amp;\therefore &amp;n=?
+\end{align}
+\]</div>
+<p>Quando o índice do radical é par, o radicando por ser negativo?</p>
+<div class="arithmatex">\[
+\begin{align}
+    \sqrt{-1}  &amp;= i &amp; &amp;\\
+    \sqrt{-25} &amp;= \sqrt{25.-1} = \sqrt{25}.\sqrt{-1}=5 + i\\
+    \therefore \\
+    z &amp;= 5 + i
+\end{align}
+\]</div>
+<div class="arithmatex">\[e^{\pi i} + 1 = 0\]</div>
+<div class="arithmatex">\[x^2 + a = 0\]</div>
+<p>Por um tempo equações de 2o grau que não possuiam raízes em Reais foram consideradas não válidas e, então, não tratadas. Até que <a href="https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia">Tartaglia</a> e <a href="https://en.wikipedia.org/wiki/Scipione_del_Ferro">Del Ferro</a>, que estavam trabalhando em soluções para equações de 3o grau, propuseram um algoritmo para resolver tais equações, o qual foi publicado por <a href="https://en.wikipedia.org/wiki/Gerolamo_Cardano">Cardano</a> - <a href="https://en.wikipedia.org/wiki/Ars_Magna_(Cardano_book)">Ars Magna</a>, <a href="https://web.archive.org/web/20220201093634/http://www.filosofia.unimi.it/cardano/testi/operaomnia/vol_4_s_4.pdf">1545</a>. Assim a fórmula ficou conhecida como <strong>Fórmula de Cardano</strong>, sendo:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned}
+    x^3 + px + q &amp; = 0 \\
+    \therefore x &amp; = u + v \\
+    &amp; ⇓ \\
+    (u + v)^3 + p(u + v) + q &amp; = 0 \\
+    (u + v)^3 + p(u + v) + q &amp; = 0 \\
+    u^3 + v^3 + (3uv + p)(u+v) + q &amp; = 0 \\
+    \\
+    &amp; \text{se} \\
+    (3uv +p) &amp; = 0
+    \\
+    &amp; \therefore \\
+    u^3 + v^3 + q &amp; = 0 \\
+    u^3 + v^3 &amp; = -q \\
+\end{aligned}
+\end{equation}
+\]</div>
+<p>Simplificando:
+$$
+\begin{cases}
+    uv &amp; = \displaystyle -\frac{p}{3} \
+    u^3 + v^3 &amp; = -q
+\end{cases}
+$$</p>
+<p>Considerando-se as relações entre soma e produto de raízes ditas pelas <a href="https://pt.wikipedia.org/wiki/Identidades_de_Newton">relações de Girard</a> para equações mônicas do segundo grau, é possível definir:
+$$
+\begin{align}
+    u^3v^3 &amp; = \frac{-p^3}{27}
+\end{align}
+$$</p>
+<p>A dedução da fórmula da Cardano chega ao final com:
+$$
+\begin{align}
+    x = \displaystyle \sqrt[3]{-\frac{q}{2} + \sqrt{ \frac{q^2}{4} +\frac{p^3}{27}}} + \sqrt[3]{-\frac{q}{2} - \sqrt{ \frac{q^2}{4} +\frac{p^3}{27}}}
+\end{align}
+$$</p>
+<p>Assim, utilizando essa fórmula era possível calcular raízes de polinômios de grau 3. Porém, existia uma equação que não conseguia ser resolvida por esse método, era essa:</p>
+<div class="arithmatex">\[
+x^3 -15x -4 = 0,
+\]</div>
+<p><a href="https://complex-analysis.com/content/brief_history.html" target="'_blank">Geometric interpretation of quadratic and cubic equations</a></p>
+<p>pois resolvendo a equação chegamos à:</p>
+<div class="arithmatex">\[
+\begin{align}
+    x &amp;= \displaystyle \sqrt[3]{2 + \sqrt{-121}} &amp;+&amp; \sqrt[3]{2-\sqrt{-121}} \\
+    x &amp;= \displaystyle \sqrt[3]{2 + 11\sqrt{-1}} &amp;+&amp; \sqrt[3]{2-11\sqrt{-1}} \\
+    x &amp;= \displaystyle 2 + \sqrt{-1} &amp;+&amp; 2 - \sqrt{-1} \\
+    x &amp;= 4
+\end{align}
+\]</div>
+<p>E não tínhamos a solução para raízes quadradas de números negativos, ao menos, de forma geométrica. Um agravante, para a equação acima, é facilmente verificável que existe sim uma raiz ao menos, sendo <span class="arithmatex">\(x=4\)</span>, pois:</p>
+<div class="arithmatex">\[
+\begin{align}
+    4^3 -15.4 -4 &amp; = 0 \\
+    64 - 60 -4 &amp; = 0 \\
+    0 &amp; = 0
+\end{align}
+\]</div>
+<p>Ou seja, existe raiz se <span class="arithmatex">\(x=4\)</span>.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1026,6 +1109,9 @@
 </li>
 <li id="fn:2">
 <p>Aczel MR, Aczel D and Ville M (2019) <a href="https://doi.org/10.3389/frym.2019.00128" target="_blank">Hero From the East: How Zero Came to the West</a>. Front. Young Minds. 7:128. <a href="https://doi.org/10.3389/frym.2019.00128" target="_blank">doi: 10.3389/frym.2019.00128</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://complex-analysis.com/content/brief_history.html" target="'_blank">A Brief History</a>, Complex Analysis. Acessado em 2024.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1049,7 +1135,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2024</span>
   </span>
 
     
