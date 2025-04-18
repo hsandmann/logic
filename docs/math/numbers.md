@@ -1,5 +1,7 @@
 
-Os números são elementos fundamentais para a matemática, pois, são utilizados para representar quantidades, medidas, grandezas, entre outros. Os números são classificados em diferentes conjuntos, conforme a sua natureza e propriedades. Os principais conjuntos numéricos são: [naturais](#naturais), [inteiros](#inteiros), [racionais](#racionais), [irracionais](#irracionais), [reais](#reais) e [complexos](#complexos).
+Os números são elementos fundamentais para a matemática, pois, são utilizados para representar quantidades, medidas, grandezas, entre outros. Os números são classificados em diferentes conjuntos, conforme a sua natureza e propriedades. Os principais conjuntos numéricos são: [naturais](#naturais), [inteiros](#inteiros), [racionais](#racionais), [irracionais](#irracionais), [reais](#reais) e [complexos](#complexos). Sendo possível ilustrar a relação entre esses conjuntos por meio do diagrama de Venn, conforme a figura abaixo:
+
+![Representação dos conjuntos dos números com relação ao pertencimento. Fonte: wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/6/6b/Venn_Diagram_of_Numbers_Expanded.svg)
 
 
 ## [Naturais](#naturais)
@@ -27,7 +29,7 @@ $$
 \mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}
 $$
 
-Note que não **existem números negativos na Natureza**, mas, os números negativos são utilizados para representar grandezas opostas, como, por exemplo, a temperatura, onde o zero grau Celsius representa a temperatura de congelamento da água, e os números negativos representam temperaturas abaixo de zero. Logo, para representar números negativos, foi necessário anotar o sinal de menos, $-$, antes do número natural correspondente.
+Note que **NÃO existem números negativos na Natureza**, mas, os números negativos são utilizados para representar grandezas opostas, como, por exemplo, a temperatura, onde o zero grau Celsius representa a temperatura de congelamento da água, e os números negativos representam temperaturas abaixo de zero. Logo, para representar números negativos, foi necessário anotar o sinal de menos, $-$, antes do número natural correspondente.
 
 !!! tip "Representação"
 
@@ -75,24 +77,29 @@ Não é possível anotar um número irracional em um papel e carregá-lo para ou
 
 !!! info "Caso $\pi$"
 
-    O número $\pi$ é um exemplo de número irracional, pois, é um número que representa a razão entre o perímetro de uma circunferência e o seu diâmetro, e possui infinitas casas decimais, sem um padrão de repetição.
+    O número $\pi$ é um exemplo de número irracional, pois, é um número que representa a razão entre o perímetro de uma circunferência e o seu diâmetro, e possui infinitas casas decimais, sem um padrão de repetição. Não é possível calcular o valor exato de $\pi$, pois, é um número irracional[^4].
+
+    $$
+    \pi \approx 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609433057270365759591953092186117381932611793105118548074462379962749567351885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293176752384674818467669405132000568127145263560827785771342757789609173637178721468440901224953430146549585371050792279689258923542019956112129021960864034418159813629774771309960518707211349999998372978049951059731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303598253490428755468731159562863882353787593751957781857780532171226806613001927876611195909216420198938095257201065485863278865936153381827968230301952035301852968995773622599413891249721775283479131515574857242454150695950829533116861727855889075098381754637464939319255060400927701671139009848824012858361603563707660104710181942955596198946767837449448255379774726847104047534646208046684259069491293313677028989152104752162056966024058038150193511253382430035587640247496473263914199272604269922796782354781636009341721641219924586315030286182974555706749838505494588586926995690927210797509302955 \dots
+    $$
+
 
 
 !!! info "Caso $\sqrt{2}$"
 
     $H$: assumindo que todo número pode ser racionalizado, então, podemos assumir que para o seguinte número existe um racional que o calcula:
 
-    $$ \sqrt{2} = \frac{p}{q} $$
+    $$ \displaystyle  \sqrt{2} = \frac{p}{q} $$
 
     onde $p, q \in \mathbb{Z}$. Logo,
 
     $$
     \begin{align}
-        \sqrt{2} &= \frac{p}{q} \\
-        \left( \sqrt{2} \right)^{2} &= \left( \frac{p}{q} \right)^{2} \\
-        2 &= \left( \frac{p}{q} \right)^{2} \\
-        2 &= \frac{p^{2}}{q^{2}} \\
-        2q^{2} &= p^{2} \\
+        \displaystyle \sqrt{2} &= \frac{p}{q} \\
+        \displaystyle \left( \sqrt{2} \right)^{2} &= \left( \frac{p}{q} \right)^{2} \\
+        \displaystyle 2 &= \left( \frac{p}{q} \right)^{2} \\
+        \displaystyle 2 &= \frac{p^{2}}{q^{2}} \\
+        \displaystyle 2q^{2} &= p^{2} \\
     \end{align}
     $$
 
@@ -104,15 +111,15 @@ Não é possível anotar um número irracional em um papel e carregá-lo para ou
 
     $H$: assumindo que todo número pode ser racionalizado, então, podemos assumir que para o seguinte número existe um racional que o calcula:
 
-    $$ \log_{2}{3} = \frac{p}{q} $$
+    $$ \displaystyle \log_{2}{3} = \frac{p}{q} $$
 
     onde $p, q \in \mathbb{Z}$. Logo,
 
     $$
     \begin{align}
-        2^{\frac{p}{q}} &= 3 \\
-        \left(2^{\frac{p}{q}}\right)^q &= 3^q \\
-        2^{p} &= 3^q
+        \displaystyle 2^{\frac{p}{q}} &= 3 \\
+        \displaystyle \left(2^{\frac{p}{q}}\right)^q &= 3^q \\
+        \displaystyle 2^{p} &= 3^q
     \end{align}
     $$
 
@@ -141,9 +148,11 @@ Números que aparecem em diversos cenários - que são irracionais - portanto, p
 
 ## [Reais](#reais)
 
-Como nem todo número pode ser escrito pela razão de dois números inteiros, motivo pelo qual existêm os irracionais - $\mathbb{P}$, a disjunção desses dois conjuntos. Logo,
+O conjunto dos números Reais, $\mathbb{R}$, é a união dos conjuntos dos números racionais e irracionais. Os números reais são infinitos e são representados por $\mathbb{R}$. Os números reais são utilizados para representar grandezas contínuas, como, por exemplo, a temperatura, a velocidade, a distância, entre outros.
 
-$$\mathbb{R} = \mathbb{Q} \lor \mathbb{P}$$
+$$\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$$
+
+Conforme ilustrado no diagrama de Veen na [figura 1](#_figure-1).
 
 
 ## [Complexos](#complexos)
@@ -260,3 +269,5 @@ Ou seja, existe raiz se $x=4$.
 [^1]: Bicudo, Irineu., Euclides. [Os elementos](https://www.amazon.com.br/Os-elementos-Irineu-Bicudo/dp/8571399352){target='_blank'}. Brasil: Editora Unesp, 2009.
 [^2]: Aczel MR, Aczel D and Ville M (2019) [Hero From the East: How Zero Came to the West](https://doi.org/10.3389/frym.2019.00128){target='_blank'}. Front. Young Minds. 7:128. [doi: 10.3389/frym.2019.00128](https://doi.org/10.3389/frym.2019.00128){target='_blank'}.
 [^3]: [A Brief History](https://complex-analysis.com/content/brief_history.html){target='_blank}, Complex Analysis. Acessado em 2024.
+[^4]: Wikipedia contributors. (2024, June 19). [Approximations of π. In Wikipedia, The Free Encyclopedia](https://en.wikipedia.org/wiki/Approximations_of_%CF%80){target='_blank'}. Retrieved 00:32, June 30, 2024.
+[^5]: Wikipedia contributors. (2024, May 23). [Venn diagram. In Wikipedia, The Free Encyclopedia](https://en.wikipedia.org/wiki/Venn_diagram){target='_blank'}. Retrieved 01:51, June 30, 2024.
