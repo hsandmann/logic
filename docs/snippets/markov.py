@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import numpy as np
 import pandas as pd
-import time
 from io import StringIO
 
 num_days = 250
