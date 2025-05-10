@@ -1,0 +1,59 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Home",
+      "symbolSize": 0,
+      "value": "/logic/"
+    },
+    {
+      "id": "1",
+      "name": 2024.2,
+      "symbolSize": 0,
+      "value": "/logic/versions/2024.2/"
+    },
+    {
+      "id": "2",
+      "name": "Limite",
+      "symbolSize": 0,
+      "value": "/logic/limits/limits/"
+    },
+    {
+      "id": "3",
+      "name": "Hist\u00f3ria",
+      "symbolSize": 0,
+      "value": "/logic/logic/history/"
+    },
+    {
+      "id": "4",
+      "name": "Conjuntos",
+      "symbolSize": 0,
+      "value": "/logic/math/sets/"
+    },
+    {
+      "id": "5",
+      "name": "N\u00fameros",
+      "symbolSize": 0,
+      "value": "/logic/math/numbers/"
+    },
+    {
+      "id": "6",
+      "name": "Disclaimer",
+      "symbolSize": 0,
+      "value": "/logic/disclaimer/"
+    },
+    {
+      "id": "7",
+      "name": "OhMyZsh",
+      "symbolSize": 0,
+      "value": "/logic/appendix/ohmyzsh/"
+    },
+    {
+      "id": "8",
+      "name": "py",
+      "symbolSize": 0,
+      "value": "/logic/py/"
+    }
+  ],
+  "links": []
+}

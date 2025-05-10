@@ -1,0 +1,3262 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sandmann, H.">
+      
+      
+        <link rel="canonical" href="https://hsandmann.github.io/logic/limits/limits/">
+      
+      
+        <link rel="prev" href="../../versions/2024.2/">
+      
+      
+        <link rel="next" href="../../logic/history/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Limite - Análise e Estruturação Lógica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%2032C28.7%2032%200%2060.7%200%2096v320c0%2035.3%2028.7%2064%2064%2064h224V368c0-26.5%2021.5-48%2048-48h112V96c0-35.3-28.7-64-64-64zm384%20320H336c-8.8%200-16%207.2-16%2016v112l32-32%2064-64z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M96%200C43%200%200%2043%200%2096v320c0%2053%2043%2096%2096%2096h320c17.7%200%2032-14.3%2032-32s-14.3-32-32-32v-64c17.7%200%2032-14.3%2032-32V32c0-17.7-14.3-32-32-32H96m0%20384h256v64H96c-17.7%200-32-14.3-32-32s14.3-32%2032-32m32-240c0-8.8%207.2-16%2016-16h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16m16%2048h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16s7.2-16%2016-16%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-40-176h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24m40-208a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480%2032c0-12.9-7.8-24.6-19.8-29.6S434.5.2%20425.3%209.3L381.7%2053c-48%2048-113.1%2075-181%2075H64c-35.3%200-64%2028.7-64%2064v96c0%2035.3%2028.7%2064%2064%2064v128c0%2017.7%2014.3%2032%2032%2032h64c17.7%200%2032-14.3%2032-32V352h8.7c67.9%200%20133%2027%20181%2075l43.6%2043.6c9.2%209.2%2022.9%2011.9%2034.9%206.9s19.8-16.6%2019.8-29.6V300.3c18.6-8.8%2032-32.5%2032-60.4s-13.4-51.6-32-60.4zm-64%2076.7v262.6C357.2%20317.8%20280.5%20288%20200.7%20288H192v-96h8.7c79.8%200%20156.5-29.8%20215.3-83.3%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M438.6%20105.4c12.5%2012.5%2012.5%2032.8%200%2045.3l-256%20256c-12.5%2012.5-32.8%2012.5-45.3%200l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200L160%20338.7l233.4-233.3c12.5-12.5%2032.8-12.5%2045.3%200z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-86.2-346.7c7.9-22.3%2029.1-37.3%2052.8-37.3h58.3c34.9%200%2063.1%2028.3%2063.1%2063.1%200%2022.6-12.1%2043.5-31.7%2054.8L280%20264.4c-.2%2013-10.9%2023.6-24%2023.6-13.3%200-24-10.7-24-24v-13.5c0-8.6%204.6-16.5%2012.1-20.8l44.3-25.4c4.7-2.7%207.6-7.7%207.6-13.1%200-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4%200-6.4%202.1-7.5%205.3l-.4%201.2c-4.4%2012.5-18.2%2019-30.6%2014.6s-19-18.2-14.6-30.6l.4-1.2zM224%20352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%2032c14.2%200%2027.3%207.5%2034.5%2019.8l216%20368c7.3%2012.4%207.3%2027.7.2%2040.1S486.3%20480%20472%20480H40c-14.3%200-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7%2039.5%20241.8%2032%20256%2032m0%20128c-13.3%200-24%2010.7-24%2024v112c0%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24V184c0-13.3-10.7-24-24-24m32%20224a32%2032%200%201%200-64%200%2032%2032%200%201%200%2064%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M459.1%2052.4%20442.6%206.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5%202.6-10.4%206.5l-16.5%2045.9-46%2016.8c-4.3%201.6-7.3%205.9-7.2%2010.4%200%204.5%203%208.7%207.2%2010.2l45.7%2016.8%2016.8%2045.8c1.5%204.4%205.8%207.5%2010.4%207.5s8.9-3.1%2010.4-7.5l16.5-45.8%2045.7-16.8c4.2-1.5%207.2-5.7%207.2-10.2%200-4.6-3-8.9-7.2-10.4zm-132.4%2053c-12.5-12.5-32.8-12.5-45.3%200l-2.9%202.9c-22-8-45.8-12.3-70.5-12.3C93.1%2096%200%20189.1%200%20304s93.1%20208%20208%20208%20208-93.1%20208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5%2012.5-32.8%200-45.3l-80-80zM200%20192c-57.4%200-104%2046.6-104%20104v8c0%208.8-7.2%2016-16%2016s-16-7.2-16-16v-8c0-75.1%2060.9-136%20136-136h8c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20398.9c58.5-41.1%2096-104.1%2096-174.9C512%20100.3%20397.4%200%20256%200S0%20100.3%200%20224c0%2070.7%2037.5%20133.8%2096%20174.9V464c0%2026.5%2021.5%2048%2048%2048h48v-48c0-8.8%207.2-16%2016-16s16%207.2%2016%2016v48h64v-48c0-8.8%207.2-16%2016-16s16%207.2%2016%2016v48h48c26.5%200%2048-21.5%2048-48v-65.1M96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M320%200c17.7%200%2032%2014.3%2032%2032v64h120c39.8%200%2072%2032.2%2072%2072v272c0%2039.8-32.2%2072-72%2072H168c-39.8%200-72-32.2-72-72V168c0-39.8%2032.2-72%2072-72h120V32c0-17.7%2014.3-32%2032-32M208%20384c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zm96%200c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zm96%200c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zM264%20256a40%2040%200%201%200-80%200%2040%2040%200%201%200%2080%200m152%2040a40%2040%200%201%200%200-80%2040%2040%200%201%200%200%2080M48%20224h16v192H48c-26.5%200-48-21.5-48-48v-96c0-26.5%2021.5-48%2048-48m544%200c26.5%200%2048%2021.5%2048%2048v96c0%2026.5-21.5%2048-48%2048h-16V224z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v132.8c0%2011.8-3.3%2023.5-9.5%2033.5L10.3%20406.2C3.6%20417.2%200%20429.7%200%20442.6%200%20480.9%2031.1%20512%2069.4%20512h309.2c38.3%200%2069.4-31.1%2069.4-69.4%200-12.8-3.6-25.4-10.3-36.4L329.5%20230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20196.8V64h64v132.8c0%2023.7%206.6%2046.9%2019%2067.1l34.5%2056.1h-171l34.5-56.1c12.4-20.2%2019-43.4%2019-67.1%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64V216m256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64V216%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../termynal.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-calculo-de-limites-a-derivadas-passando-por-logaritmos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Análise e Estruturação Lógica" class="md-header__button md-logo" aria-label="Análise e Estruturação Lógica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Análise e Estruturação Lógica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Limite
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Análise e Estruturação Lógica" class="md-nav__button md-logo" aria-label="Análise e Estruturação Lógica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Análise e Estruturação Lógica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Versions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Versions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../versions/2024.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2024.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Limite
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Limite
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#curso-de-calculo-de-limites-a-derivadas-passando-por-logaritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curso de Cálculo: De Limites a Derivadas, Passando por Logaritmos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curso de Cálculo: De Limites a Derivadas, Passando por Logaritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-1-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 1: Limites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 1: Limites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-introducao-aos-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Introdução aos Limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedades-dos-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedades dos Limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-calculo-de-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Cálculo de Limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-limites-no-infinito" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Limites no Infinito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-formas-indeterminadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Formas Indeterminadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assintotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assíntotas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assíntotas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verticais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verticais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inclinadas-ou-obliquas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inclinadas ou Oblíquas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-2-continuidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 2: Continuidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 2: Continuidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definicao-de-continuidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Definição de Continuidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-tipos-de-descontinuidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Tipos de Descontinuidades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-teorema-do-valor-intermediario" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Teorema do Valor Intermediário
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-3-logaritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 3: Logaritmos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 3: Logaritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-introducao-aos-logaritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Introdução aos Logaritmos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-logaritmo-natural" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Logaritmo Natural
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-resolucao-de-equacoes-logaritmicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Resolução de Equações Logarítmicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-logaritmos-e-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Logaritmos e Limites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-4-derivadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 4: Derivadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 4: Derivadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-introducao-as-derivadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Introdução às Derivadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-regras-de-diferenciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Regras de Diferenciação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-derivadas-de-funcoes-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Derivadas de Funções Específicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-diferenciacao-implicita" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Diferenciação Implícita
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-aplicacoes-das-derivadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Aplicações das Derivadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexoes-entre-os-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexões entre os Módulos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios Práticos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lógica
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lógica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    História
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/propositions.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proposições
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/arguments.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Argumentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/deduction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dedução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/induction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Indução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/paradoxes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paradoxos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Matemática
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Matemática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conjuntos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Números
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/relations.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relações
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disclaimer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disclaimer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/ohmyzsh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OhMyZsh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../py/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    py
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#curso-de-calculo-de-limites-a-derivadas-passando-por-logaritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curso de Cálculo: De Limites a Derivadas, Passando por Logaritmos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curso de Cálculo: De Limites a Derivadas, Passando por Logaritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-1-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 1: Limites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 1: Limites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-introducao-aos-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Introdução aos Limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedades-dos-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propriedades dos Limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-calculo-de-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Cálculo de Limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-limites-no-infinito" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Limites no Infinito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-formas-indeterminadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Formas Indeterminadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assintotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assíntotas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assíntotas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verticais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verticais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inclinadas-ou-obliquas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inclinadas ou Oblíquas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-2-continuidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 2: Continuidade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 2: Continuidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definicao-de-continuidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Definição de Continuidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-tipos-de-descontinuidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Tipos de Descontinuidades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-teorema-do-valor-intermediario" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Teorema do Valor Intermediário
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-3-logaritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 3: Logaritmos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 3: Logaritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-introducao-aos-logaritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Introdução aos Logaritmos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-logaritmo-natural" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Logaritmo Natural
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-resolucao-de-equacoes-logaritmicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Resolução de Equações Logarítmicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-logaritmos-e-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Logaritmos e Limites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-4-derivadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo 4: Derivadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulo 4: Derivadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-introducao-as-derivadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Introdução às Derivadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-regras-de-diferenciacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Regras de Diferenciação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-derivadas-de-funcoes-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Derivadas de Funções Específicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-diferenciacao-implicita" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Diferenciação Implícita
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-aplicacoes-das-derivadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Aplicações das Derivadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexoes-entre-os-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexões entre os Módulos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-praticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios Práticos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Limite</h1>
+
+<h2 id="curso-de-calculo-de-limites-a-derivadas-passando-por-logaritmos">Curso de Cálculo: De Limites a Derivadas, Passando por Logaritmos</h2>
+<h3 id="modulo-1-limites">Módulo 1: Limites</h3>
+<h4 id="11-introducao-aos-limites">1.1 Introdução aos Limites</h4>
+<ul>
+<li><strong>O que é um limite?</strong>: Um limite descreve o comportamento de uma função à medida que a variável independente se aproxima de um determinado valor. Ele é a base para entender continuidade e derivadas.</li>
+<li><strong>Notação</strong>: <span class="arithmatex">\(\lim_{x \to a} f(x) = L\)</span> significa que, conforme <span class="arithmatex">\(x\)</span> se aproxima de <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(f(x)\)</span> se aproxima de <span class="arithmatex">\(L\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(\lim_{x \to 2} (x + 3) = 5\)</span>, pois substituir <span class="arithmatex">\(x = 2\)</span> diretamente funciona.</li>
+</ul>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<svg height="360pt" version="1.1" viewbox="0 0 1080 360" width="1080pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<rdf:rdf xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<cc:work>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+<dc:date>2025-05-10T03:00:57.354577</dc:date>
+<dc:format>image/svg+xml</dc:format>
+<dc:creator>
+<cc:agent>
+<dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title>
+</cc:agent>
+</dc:creator>
+</cc:work>
+</rdf:rdf>
+</metadata>
+<defs>
+<style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+</defs>
+<g id="figure_1">
+<g id="patch_1">
+<path d="M 0 360 
+L 1080 360 
+L 1080 0 
+L 0 0 
+L 0 360 
+z
+" style="fill: none"></path>
+</g>
+<g id="axes_1">
+<g id="patch_2">
+<path d="M 36.64335 343.49049 
+L 363.995127 343.49049 
+L 363.995127 10.8 
+L 36.64335 10.8 
+L 36.64335 343.49049 
+z
+" style="fill: none"></path>
+</g>
+<g id="matplotlib.axis_1"></g>
+<g id="matplotlib.axis_2"></g>
+<g id="line2d_1">
+<path clip-path="url(#p73ecf8299c)" d="M 36.64335 328.368195 
+L 363.995127 328.368195 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_2">
+<path clip-path="url(#p73ecf8299c)" d="M 65.108722 343.49049 
+L 65.108722 10.8 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_3">
+<path clip-path="url(#p73ecf8299c)" d="M 36.64335 298.045319 
+L 43.323999 296.588067 
+L 50.004647 295.060783 
+L 56.685296 293.4601 
+L 63.365944 291.782493 
+L 70.046593 290.024263 
+L 76.727241 288.181536 
+L 83.40789 286.250252 
+L 90.088538 284.226155 
+L 96.769187 282.104784 
+L 103.449835 279.881464 
+L 110.130484 277.551296 
+L 116.811132 275.109146 
+L 123.491781 272.549631 
+L 130.172429 269.867112 
+L 136.853078 267.055676 
+L 143.533726 264.109129 
+L 150.214375 261.020977 
+L 156.895023 257.784415 
+L 163.575672 254.392311 
+L 170.25632 250.837189 
+L 176.936969 247.111217 
+L 183.617617 243.206182 
+L 190.298266 239.113479 
+L 196.978914 234.824091 
+L 203.659563 230.328563 
+L 210.340211 225.61699 
+L 217.02086 220.678989 
+L 223.701508 215.503678 
+L 230.382157 210.079653 
+L 237.062805 204.394961 
+L 243.743454 198.437076 
+L 250.424102 192.192867 
+L 257.104751 185.648574 
+L 263.785399 178.789778 
+L 270.466048 171.601362 
+L 277.146696 164.067487 
+L 283.827345 156.171549 
+L 290.507993 147.89615 
+L 297.188642 139.223054 
+L 303.86929 130.133147 
+L 310.549939 120.606398 
+L 317.230587 110.621815 
+L 323.911236 100.157395 
+L 330.591884 89.190076 
+L 337.272533 77.695692 
+L 343.953181 65.648913 
+L 350.63383 53.023192 
+L 357.314478 39.790706 
+L 363.995127 25.922295 
+" style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"></path>
+</g>
+<g id="line2d_4">
+<path clip-path="url(#p73ecf8299c)" d="M 235.900954 328.368195 
+L 235.900954 205.402868 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_5">
+<path clip-path="url(#p73ecf8299c)" d="M 65.108722 205.402868 
+L 235.900954 205.402868 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_6">
+<path clip-path="url(#p73ecf8299c)" d="M 321.297069 328.368195 
+L 321.297069 104.310762 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_7">
+<path clip-path="url(#p73ecf8299c)" d="M 65.108722 104.310762 
+L 321.297069 104.310762 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_8">
+<path clip-path="url(#p73ecf8299c)" d="M 278.599011 328.368195 
+L 278.599011 162.382366 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_9">
+<path clip-path="url(#p73ecf8299c)" d="M 65.108722 162.382366 
+L 278.599011 162.382366 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_10">
+<defs>
+<path d="M 0 7.5 
+C 1.989023 7.5 3.896849 6.709753 5.303301 5.303301 
+C 6.709753 3.896849 7.5 1.989023 7.5 0 
+C 7.5 -1.989023 6.709753 -3.896849 5.303301 -5.303301 
+C 3.896849 -6.709753 1.989023 -7.5 0 -7.5 
+C -1.989023 -7.5 -3.896849 -6.709753 -5.303301 -5.303301 
+C -6.709753 -3.896849 -7.5 -1.989023 -7.5 0 
+C -7.5 1.989023 -6.709753 3.896849 -5.303301 5.303301 
+C -3.896849 6.709753 -1.989023 7.5 0 7.5 
+z
+" id="m5bea8c2b23" style="stroke: #ff0000"></path>
+</defs>
+<g clip-path="url(#p73ecf8299c)">
+<use style="fill: #ff0000; stroke: #ff0000" x="278.599011" xlink:href="#m5bea8c2b23" y="162.382366"></use>
+</g>
+</g>
+<g id="text_1">
+<!-- a -->
+<g transform="translate(274.002918 346.886417) scale(0.15 -0.15)">
+<defs>
+<path d="M 2194 1759 
+Q 1497 1759 1228 1600 
+Q 959 1441 959 1056 
+Q 959 750 1161 570 
+Q 1363 391 1709 391 
+Q 2188 391 2477 730 
+Q 2766 1069 2766 1631 
+L 2766 1759 
+L 2194 1759 
+z
+M 3341 1997 
+L 3341 0 
+L 2766 0 
+L 2766 531 
+Q 2569 213 2275 61 
+Q 1981 -91 1556 -91 
+Q 1019 -91 701 211 
+Q 384 513 384 1019 
+Q 384 1609 779 1909 
+Q 1175 2209 1959 2209 
+L 2766 2209 
+L 2766 2266 
+Q 2766 2663 2505 2880 
+Q 2244 3097 1772 3097 
+Q 1472 3097 1187 3025 
+Q 903 2953 641 2809 
+L 641 3341 
+Q 956 3463 1253 3523 
+Q 1550 3584 1831 3584 
+Q 2591 3584 2966 3190 
+Q 3341 2797 3341 1997 
+z
+" id="DejaVuSans-61" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-61"></use>
+</g>
+</g>
+<g id="text_2">
+<!-- $a-\delta$ -->
+<g transform="translate(217.450954 346.886417) scale(0.15 -0.15)">
+<defs>
+<path d="M 3438 1997 
+L 3047 0 
+L 2472 0 
+L 2578 531 
+Q 2325 219 2001 64 
+Q 1678 -91 1281 -91 
+Q 834 -91 548 182 
+Q 263 456 263 884 
+Q 263 1497 752 1853 
+Q 1241 2209 2100 2209 
+L 2900 2209 
+L 2931 2363 
+Q 2938 2388 2941 2417 
+Q 2944 2447 2944 2509 
+Q 2944 2788 2717 2942 
+Q 2491 3097 2081 3097 
+Q 1800 3097 1504 3025 
+Q 1209 2953 897 2809 
+L 997 3341 
+Q 1322 3463 1633 3523 
+Q 1944 3584 2234 3584 
+Q 2853 3584 3176 3315 
+Q 3500 3047 3500 2534 
+Q 3500 2431 3484 2292 
+Q 3469 2153 3438 1997 
+z
+M 2816 1759 
+L 2241 1759 
+Q 1534 1759 1195 1570 
+Q 856 1381 856 984 
+Q 856 709 1029 553 
+Q 1203 397 1509 397 
+Q 1978 397 2328 733 
+Q 2678 1069 2791 1631 
+L 2816 1759 
+z
+" id="DejaVuSans-Oblique-61" transform="scale(0.015625)"></path>
+<path d="M 678 2272 
+L 4684 2272 
+L 4684 1741 
+L 678 1741 
+L 678 2272 
+z
+" id="DejaVuSans-2212" transform="scale(0.015625)"></path>
+<path d="M 3472 4053 
+Q 3197 4272 2450 4272 
+Q 1659 4272 1588 3906 
+Q 1531 3619 2328 3469 
+Q 2953 3353 3253 3003 
+Q 3616 2581 3447 1716 
+Q 3284 888 2763 400 
+Q 2238 -91 1488 -91 
+Q 741 -91 406 400 
+Q 72 888 241 1747 
+Q 363 2384 891 2900 
+Q 1097 3100 1353 3213 
+Q 913 3459 1000 3900 
+Q 1166 4750 2544 4750 
+Q 3234 4750 3566 4531 
+L 3472 4053 
+z
+M 1753 3056 
+Q 1525 2966 1306 2738 
+Q 969 2384 847 1747 
+Q 722 1113 919 756 
+Q 1119 397 1584 397 
+Q 2044 397 2381 759 
+Q 2722 1122 2838 1716 
+Q 2956 2338 2731 2638 
+Q 2491 2959 2103 2994 
+Q 1906 3013 1753 3056 
+z
+" id="DejaVuSans-Oblique-3b4" transform="scale(0.015625)"></path>
+</defs>
+<use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-61"></use>
+<use transform="translate(80.761719 0.78125)" xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(184.033203 0.78125)" xlink:href="#DejaVuSans-Oblique-3b4"></use>
+</g>
+</g>
+<g id="text_3">
+<!-- $a+\delta$ -->
+<g transform="translate(302.847069 346.886417) scale(0.15 -0.15)">
+<defs>
+<path d="M 2944 4013 
+L 2944 2272 
+L 4684 2272 
+L 4684 1741 
+L 2944 1741 
+L 2944 0 
+L 2419 0 
+L 2419 1741 
+L 678 1741 
+L 678 2272 
+L 2419 2272 
+L 2419 4013 
+L 2944 4013 
+z
+" id="DejaVuSans-2b" transform="scale(0.015625)"></path>
+</defs>
+<use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-61"></use>
+<use transform="translate(80.761719 0.78125)" xlink:href="#DejaVuSans-2b"></use>
+<use transform="translate(184.033203 0.78125)" xlink:href="#DejaVuSans-Oblique-3b4"></use>
+</g>
+</g>
+<g id="text_4">
+<!-- $L-\epsilon$ -->
+<g transform="translate(30.158722 209.541931) scale(0.15 -0.15)">
+<defs>
+<path d="M 1075 4666 
+L 1709 4666 
+L 909 525 
+L 3181 525 
+L 3078 0 
+L 172 0 
+L 1075 4666 
+z
+" id="DejaVuSans-Oblique-4c" transform="scale(0.015625)"></path>
+<path d="M 1263 1888 
+Q 925 1963 778 2166 
+Q 669 2309 669 2503 
+Q 669 3034 1175 3344 
+Q 1575 3588 2188 3588 
+Q 2425 3588 2684 3550 
+Q 2944 3513 3234 3438 
+L 3134 2916 
+Q 2847 3006 2606 3047 
+Q 2359 3088 2138 3088 
+Q 1766 3088 1522 2944 
+Q 1228 2772 1228 2522 
+Q 1228 2356 1381 2241 
+Q 1563 2103 1925 2103 
+L 2409 2103 
+L 2319 1628 
+L 1856 1628 
+Q 1425 1628 1172 1469 
+Q 828 1253 828 916 
+Q 828 703 1013 563 
+Q 1244 388 1716 388 
+Q 2006 388 2284 444 
+Q 2563 503 2806 619 
+L 2700 84 
+Q 2403 -3 2131 -47 
+Q 1859 -91 1609 -91 
+Q 866 -91 516 194 
+Q 250 413 250 781 
+Q 250 1278 600 1584 
+Q 859 1813 1263 1888 
+z
+" id="DejaVuSans-Oblique-3b5" transform="scale(0.015625)"></path>
+</defs>
+<use transform="translate(0 0.09375)" xlink:href="#DejaVuSans-Oblique-4c"></use>
+<use transform="translate(75.195312 0.09375)" xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(178.466797 0.09375)" xlink:href="#DejaVuSans-Oblique-3b5"></use>
+</g>
+</g>
+<g id="text_5">
+<!-- $L+\epsilon$ -->
+<g transform="translate(30.158722 108.449824) scale(0.15 -0.15)">
+<use transform="translate(0 0.09375)" xlink:href="#DejaVuSans-Oblique-4c"></use>
+<use transform="translate(75.195312 0.09375)" xlink:href="#DejaVuSans-2b"></use>
+<use transform="translate(178.466797 0.09375)" xlink:href="#DejaVuSans-Oblique-3b5"></use>
+</g>
+</g>
+<g id="text_6">
+<!-- L=f(a) -->
+<g transform="translate(18.004035 166.521428) scale(0.15 -0.15)">
+<defs>
+<path d="M 628 4666 
+L 1259 4666 
+L 1259 531 
+L 3531 531 
+L 3531 0 
+L 628 0 
+L 628 4666 
+z
+" id="DejaVuSans-4c" transform="scale(0.015625)"></path>
+<path d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" id="DejaVuSans-3d" transform="scale(0.015625)"></path>
+<path d="M 2375 4863 
+L 2375 4384 
+L 1825 4384 
+Q 1516 4384 1395 4259 
+Q 1275 4134 1275 3809 
+L 1275 3500 
+L 2222 3500 
+L 2222 3053 
+L 1275 3053 
+L 1275 0 
+L 697 0 
+L 697 3053 
+L 147 3053 
+L 147 3500 
+L 697 3500 
+L 697 3744 
+Q 697 4328 969 4595 
+Q 1241 4863 1831 4863 
+L 2375 4863 
+z
+" id="DejaVuSans-66" transform="scale(0.015625)"></path>
+<path d="M 1984 4856 
+Q 1566 4138 1362 3434 
+Q 1159 2731 1159 2009 
+Q 1159 1288 1364 580 
+Q 1569 -128 1984 -844 
+L 1484 -844 
+Q 1016 -109 783 600 
+Q 550 1309 550 2009 
+Q 550 2706 781 3412 
+Q 1013 4119 1484 4856 
+L 1984 4856 
+z
+" id="DejaVuSans-28" transform="scale(0.015625)"></path>
+<path d="M 513 4856 
+L 1013 4856 
+Q 1481 4119 1714 3412 
+Q 1947 2706 1947 2009 
+Q 1947 1309 1714 600 
+Q 1481 -109 1013 -844 
+L 513 -844 
+Q 928 -128 1133 580 
+Q 1338 1288 1338 2009 
+Q 1338 2731 1133 3434 
+Q 928 4138 513 4856 
+z
+" id="DejaVuSans-29" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-4c"></use>
+<use transform="translate(55.712891 0)" xlink:href="#DejaVuSans-3d"></use>
+<use transform="translate(139.501953 0)" xlink:href="#DejaVuSans-66"></use>
+<use transform="translate(174.707031 0)" xlink:href="#DejaVuSans-28"></use>
+<use transform="translate(213.720703 0)" xlink:href="#DejaVuSans-61"></use>
+<use transform="translate(275 0)" xlink:href="#DejaVuSans-29"></use>
+</g>
+</g>
+</g>
+<g id="axes_2">
+<g id="patch_3">
+<path d="M 389.245787 343.49049 
+L 716.597563 343.49049 
+L 716.597563 10.8 
+L 389.245787 10.8 
+L 389.245787 343.49049 
+z
+" style="fill: none"></path>
+</g>
+<g id="matplotlib.axis_3"></g>
+<g id="matplotlib.axis_4"></g>
+<g id="line2d_11">
+<path clip-path="url(#p85446abffe)" d="M 389.245787 328.368195 
+L 716.597563 328.368195 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_12">
+<path clip-path="url(#p85446abffe)" d="M 417.711159 343.49049 
+L 417.711159 10.8 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_13">
+<path clip-path="url(#p85446abffe)" d="M 389.245787 298.045319 
+L 395.926435 296.588067 
+L 402.607084 295.060783 
+L 409.287732 293.4601 
+L 415.968381 291.782493 
+L 422.649029 290.024263 
+L 429.329678 288.181536 
+L 436.010326 286.250252 
+L 442.690975 284.226155 
+L 449.371623 282.104784 
+L 456.052272 279.881464 
+L 462.73292 277.551296 
+L 469.413569 275.109146 
+L 476.094217 272.549631 
+L 482.774866 269.867112 
+L 489.455514 267.055676 
+L 496.136163 264.109129 
+L 502.816811 261.020977 
+L 509.49746 257.784415 
+L 516.178108 254.392311 
+L 522.858757 250.837189 
+L 529.539405 247.111217 
+L 536.220054 243.206182 
+L 542.900702 239.113479 
+L 549.581351 234.824091 
+L 556.261999 230.328563 
+L 562.942648 225.61699 
+L 569.623296 220.678989 
+L 576.303945 215.503678 
+L 582.984593 210.079653 
+L 589.665242 204.394961 
+L 596.34589 198.437076 
+L 603.026539 192.192867 
+L 609.707187 185.648574 
+L 616.387836 178.789778 
+L 623.068484 171.601362 
+L 629.749133 164.067487 
+L 636.429781 156.171549 
+L 643.11043 147.89615 
+L 649.791078 139.223054 
+L 656.471727 130.133147 
+L 663.152375 120.606398 
+L 669.833024 110.621815 
+L 676.513672 100.157395 
+L 683.194321 89.190076 
+L 689.874969 77.695692 
+L 696.555618 65.648913 
+L 703.236266 53.023192 
+L 709.916915 39.790706 
+L 716.597563 25.922295 
+" style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"></path>
+</g>
+<g id="line2d_14">
+<path clip-path="url(#p85446abffe)" d="M 588.50339 328.368195 
+L 588.50339 205.402868 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_15">
+<path clip-path="url(#p85446abffe)" d="M 417.711159 205.402868 
+L 588.50339 205.402868 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_16">
+<path clip-path="url(#p85446abffe)" d="M 673.899506 328.368195 
+L 673.899506 104.310762 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_17">
+<path clip-path="url(#p85446abffe)" d="M 417.711159 104.310762 
+L 673.899506 104.310762 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_18">
+<path clip-path="url(#p85446abffe)" d="M 631.201448 328.368195 
+L 631.201448 162.382366 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_19">
+<path clip-path="url(#p85446abffe)" d="M 417.711159 162.382366 
+L 631.201448 162.382366 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #bf00bf; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_20">
+<path clip-path="url(#p85446abffe)" d="M 631.201448 162.382366 
+" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"></path>
+<defs>
+<path d="M 0 7.5 
+C 1.989023 7.5 3.896849 6.709753 5.303301 5.303301 
+C 6.709753 3.896849 7.5 1.989023 7.5 0 
+C 7.5 -1.989023 6.709753 -3.896849 5.303301 -5.303301 
+C 3.896849 -6.709753 1.989023 -7.5 0 -7.5 
+C -1.989023 -7.5 -3.896849 -6.709753 -5.303301 -5.303301 
+C -6.709753 -3.896849 -7.5 -1.989023 -7.5 0 
+C -7.5 1.989023 -6.709753 3.896849 -5.303301 5.303301 
+C -3.896849 6.709753 -1.989023 7.5 0 7.5 
+z
+" id="me3362f63b6" style="stroke: #ff0000"></path>
+</defs>
+<g clip-path="url(#p85446abffe)">
+<use style="fill: #ffffff; stroke: #ff0000" x="631.201448" xlink:href="#me3362f63b6" y="162.382366"></use>
+</g>
+</g>
+<g id="text_7">
+<!-- a -->
+<g transform="translate(626.605354 346.886417) scale(0.15 -0.15)">
+<use xlink:href="#DejaVuSans-61"></use>
+</g>
+</g>
+<g id="text_8">
+<!-- $a-\delta$ -->
+<g transform="translate(570.05339 346.886417) scale(0.15 -0.15)">
+<use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-61"></use>
+<use transform="translate(80.761719 0.78125)" xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(184.033203 0.78125)" xlink:href="#DejaVuSans-Oblique-3b4"></use>
+</g>
+</g>
+<g id="text_9">
+<!-- $a+\delta$ -->
+<g transform="translate(655.449506 346.886417) scale(0.15 -0.15)">
+<use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-61"></use>
+<use transform="translate(80.761719 0.78125)" xlink:href="#DejaVuSans-2b"></use>
+<use transform="translate(184.033203 0.78125)" xlink:href="#DejaVuSans-Oblique-3b4"></use>
+</g>
+</g>
+<g id="text_10">
+<!-- $L-\epsilon$ -->
+<g transform="translate(382.761159 209.541931) scale(0.15 -0.15)">
+<use transform="translate(0 0.09375)" xlink:href="#DejaVuSans-Oblique-4c"></use>
+<use transform="translate(75.195312 0.09375)" xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(178.466797 0.09375)" xlink:href="#DejaVuSans-Oblique-3b5"></use>
+</g>
+</g>
+<g id="text_11">
+<!-- $L+\epsilon$ -->
+<g transform="translate(382.761159 108.449824) scale(0.15 -0.15)">
+<use transform="translate(0 0.09375)" xlink:href="#DejaVuSans-Oblique-4c"></use>
+<use transform="translate(75.195312 0.09375)" xlink:href="#DejaVuSans-2b"></use>
+<use transform="translate(178.466797 0.09375)" xlink:href="#DejaVuSans-Oblique-3b5"></use>
+</g>
+</g>
+<g id="text_12">
+<!-- L -->
+<g transform="translate(409.353346 166.521428) scale(0.15 -0.15)">
+<use xlink:href="#DejaVuSans-4c"></use>
+</g>
+</g>
+</g>
+<g id="axes_3">
+<g id="patch_4">
+<path d="M 741.848223 343.49049 
+L 1069.2 343.49049 
+L 1069.2 10.8 
+L 741.848223 10.8 
+L 741.848223 343.49049 
+z
+" style="fill: none"></path>
+</g>
+<g id="matplotlib.axis_5"></g>
+<g id="matplotlib.axis_6"></g>
+<g id="line2d_21">
+<path clip-path="url(#pff3e859840)" d="M 741.848223 328.368195 
+L 1069.2 328.368195 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_22">
+<path clip-path="url(#pff3e859840)" d="M 770.313595 343.49049 
+L 770.313595 10.8 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_23">
+<path clip-path="url(#pff3e859840)" d="M 741.848223 298.045319 
+L 748.528872 296.588067 
+L 755.20952 295.060783 
+L 761.890169 293.4601 
+L 768.570817 291.782493 
+L 775.251466 290.024263 
+L 781.932114 288.181536 
+L 788.612763 286.250252 
+L 795.293411 284.226155 
+L 801.97406 282.104784 
+L 808.654708 279.881464 
+L 815.335357 277.551296 
+L 822.016005 275.109146 
+L 828.696654 272.549631 
+L 835.377302 269.867112 
+L 842.057951 267.055676 
+L 848.738599 264.109129 
+L 855.419248 261.020977 
+L 862.099896 257.784415 
+L 868.780545 254.392311 
+L 875.461193 250.837189 
+L 882.141842 247.111217 
+L 888.82249 243.206182 
+L 895.503139 239.113479 
+L 902.183787 234.824091 
+L 908.864436 230.328563 
+L 915.545084 225.61699 
+L 922.225733 220.678989 
+L 928.906381 215.503678 
+L 935.58703 210.079653 
+L 942.267678 204.394961 
+L 948.948327 198.437076 
+L 955.628975 192.192867 
+L 962.309624 185.648574 
+L 968.990272 178.789778 
+L 975.670921 171.601362 
+L 982.351569 164.067487 
+L 989.032218 156.171549 
+L 995.712866 147.89615 
+L 1002.393515 139.223054 
+L 1009.074163 130.133147 
+L 1015.754812 120.606398 
+L 1022.43546 110.621815 
+L 1029.116109 100.157395 
+L 1035.796757 89.190076 
+L 1042.477406 77.695692 
+L 1049.158054 65.648913 
+L 1055.838703 53.023192 
+L 1062.519351 39.790706 
+L 1069.2 25.922295 
+" style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"></path>
+</g>
+<g id="line2d_24">
+<path clip-path="url(#pff3e859840)" d="M 941.105827 328.368195 
+L 941.105827 205.402868 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_25">
+<path clip-path="url(#pff3e859840)" d="M 770.313595 205.402868 
+L 941.105827 205.402868 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_26">
+<path clip-path="url(#pff3e859840)" d="M 1026.501942 328.368195 
+L 1026.501942 104.310762 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_27">
+<path clip-path="url(#pff3e859840)" d="M 770.313595 104.310762 
+L 1026.501942 104.310762 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_28">
+<path clip-path="url(#pff3e859840)" d="M 983.803884 162.382366 
+" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"></path>
+<defs>
+<path d="M 0 7.5 
+C 1.989023 7.5 3.896849 6.709753 5.303301 5.303301 
+C 6.709753 3.896849 7.5 1.989023 7.5 0 
+C 7.5 -1.989023 6.709753 -3.896849 5.303301 -5.303301 
+C 3.896849 -6.709753 1.989023 -7.5 0 -7.5 
+C -1.989023 -7.5 -3.896849 -6.709753 -5.303301 -5.303301 
+C -6.709753 -3.896849 -7.5 -1.989023 -7.5 0 
+C -7.5 1.989023 -6.709753 3.896849 -5.303301 5.303301 
+C -3.896849 6.709753 -1.989023 7.5 0 7.5 
+z
+" id="md9f87592af" style="stroke: #ffffff"></path>
+</defs>
+<g clip-path="url(#pff3e859840)">
+<use style="fill: #ffffff; stroke: #ffffff" x="983.803884" xlink:href="#md9f87592af" y="162.382366"></use>
+</g>
+</g>
+<g id="line2d_29">
+<path clip-path="url(#pff3e859840)" d="M 983.803884 328.368195 
+L 983.803884 69.113082 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_30">
+<path clip-path="url(#pff3e859840)" d="M 770.313595 69.113082 
+L 983.803884 69.113082 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_31">
+<path clip-path="url(#pff3e859840)" d="M 770.313595 162.382366 
+L 983.803884 162.382366 
+" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #bf00bf; stroke-width: 1.5"></path>
+</g>
+<g id="line2d_32">
+<path clip-path="url(#pff3e859840)" d="M 983.803884 162.382366 
+" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"></path>
+<g clip-path="url(#pff3e859840)">
+<use style="fill: #ffffff; stroke: #ff0000" x="983.803884" xlink:href="#me3362f63b6" y="162.382366"></use>
+</g>
+</g>
+<g id="line2d_33">
+<g clip-path="url(#pff3e859840)">
+<use style="fill: #ff0000; stroke: #ff0000" x="983.803884" xlink:href="#m5bea8c2b23" y="69.113082"></use>
+</g>
+</g>
+<g id="text_13">
+<!-- a -->
+<g transform="translate(979.207791 346.886417) scale(0.15 -0.15)">
+<use xlink:href="#DejaVuSans-61"></use>
+</g>
+</g>
+<g id="text_14">
+<!-- $a-\delta$ -->
+<g transform="translate(922.655827 346.886417) scale(0.15 -0.15)">
+<use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-61"></use>
+<use transform="translate(80.761719 0.78125)" xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(184.033203 0.78125)" xlink:href="#DejaVuSans-Oblique-3b4"></use>
+</g>
+</g>
+<g id="text_15">
+<!-- $a+\delta$ -->
+<g transform="translate(1008.051942 346.886417) scale(0.15 -0.15)">
+<use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-61"></use>
+<use transform="translate(80.761719 0.78125)" xlink:href="#DejaVuSans-2b"></use>
+<use transform="translate(184.033203 0.78125)" xlink:href="#DejaVuSans-Oblique-3b4"></use>
+</g>
+</g>
+<g id="text_16">
+<!-- $L-\epsilon$ -->
+<g transform="translate(735.363595 209.541931) scale(0.15 -0.15)">
+<use transform="translate(0 0.09375)" xlink:href="#DejaVuSans-Oblique-4c"></use>
+<use transform="translate(75.195312 0.09375)" xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(178.466797 0.09375)" xlink:href="#DejaVuSans-Oblique-3b5"></use>
+</g>
+</g>
+<g id="text_17">
+<!-- $L+\epsilon$ -->
+<g transform="translate(735.363595 108.449824) scale(0.15 -0.15)">
+<use transform="translate(0 0.09375)" xlink:href="#DejaVuSans-Oblique-4c"></use>
+<use transform="translate(75.195312 0.09375)" xlink:href="#DejaVuSans-2b"></use>
+<use transform="translate(178.466797 0.09375)" xlink:href="#DejaVuSans-Oblique-3b5"></use>
+</g>
+</g>
+<g id="text_18">
+<!-- f(a) -->
+<g transform="translate(744.136252 73.252145) scale(0.15 -0.15)">
+<use xlink:href="#DejaVuSans-66"></use>
+<use transform="translate(35.205078 0)" xlink:href="#DejaVuSans-28"></use>
+<use transform="translate(74.21875 0)" xlink:href="#DejaVuSans-61"></use>
+<use transform="translate(135.498047 0)" xlink:href="#DejaVuSans-29"></use>
+</g>
+</g>
+<g id="text_19">
+<!-- L -->
+<g transform="translate(761.955783 166.521428) scale(0.15 -0.15)">
+<use xlink:href="#DejaVuSans-4c"></use>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clippath id="p73ecf8299c">
+<rect height="332.69049" width="327.351777" x="36.64335" y="10.8"></rect>
+</clippath>
+<clippath id="p85446abffe">
+<rect height="332.69049" width="327.351777" x="389.245787" y="10.8"></rect>
+</clippath>
+<clippath id="pff3e859840">
+<rect height="332.69049" width="327.351777" x="741.848223" y="10.8"></rect>
+</clippath>
+</defs>
+</svg>
+<h4 id="propriedades-dos-limites">Propriedades dos Limites</h4>
+<ol>
+<li>
+<p>Unicidade dos Limites: o limite, se existir, <strong>é único</strong>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\displaystyle \lim_{x \to a} = P(x) = P(a)\)</span>, onde <span class="arithmatex">\(P(x) = \text{polinômio}\)</span></p>
+<p>eg.:</p>
+<p>i) <span class="arithmatex">\(\displaystyle \lim_{x \to 2}(3x-1) = 5\)</span></p>
+<p>ii) <span class="arithmatex">\(\displaystyle \lim_{x \to 1}(x^5 -3x^2 + 2) = 0\)</span></p>
+</li>
+<li>
+<p>Se <span class="arithmatex">\(\displaystyle \lim_{x \to a}f(x)\)</span> e <span class="arithmatex">\(\displaystyle \lim_{x \to a}g(x)\)</span> existem <strong>E</strong> <span class="arithmatex">\(\in \mathbb{R}\)</span></p>
+<p>a) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [f(x) \pm g(x)] = \lim_{x \to a} f(x) \pm \lim_{x \to a} g(x)\)</span></p>
+<p>b) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [c . f(x)] = c. \left( \lim_{x \to a} f(x) \right)\)</span></p>
+<p>c) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [f(x) . g(x)] = \lim_{x \to a} f(x) . \lim_{x \to a} g(x)\)</span></p>
+<p>d) <span class="arithmatex">\(\displaystyle \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)} {\lim_{x \to a} g(x)}, \lim_{x \to a} g(x) \neq 0\)</span></p>
+<p>e) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [f(x)]^n = \left[ \lim_{x \to a} f(x)\right]^n\)</span></p>
+<p>f) <span class="arithmatex">\(\displaystyle \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x) }\)</span></p>
+<p>g) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [\ln f(x)] = \ln \left( \lim_{x \to a} f(x) \right)\)</span></p>
+<p>h) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [\sin f(x)] = \sin \left( \lim_{x \to a} f(x) \right)\)</span></p>
+<p>i) <span class="arithmatex">\(\displaystyle \lim_{x \to a} [\cos f(x)] = \cos \left( \lim_{x \to a} f(x) \right)\)</span></p>
+<p>j) <span class="arithmatex">\(\displaystyle \lim_{x \to a} \left[e^{f(x)}\right] = e^{\lim_{x \to a} f(x)}\)</span></p>
+</li>
+<li>
+<p>Propriedade:</p>
+<p><span class="arithmatex">\(f(x) \le g(x) \le h(x)\)</span></p>
+<p>para todo <span class="arithmatex">\(x\)</span> em algum intervalo aberto contendo <span class="arithmatex">\(a\)</span> e</p>
+<p><span class="arithmatex">\(\displaystyle \lim_{x \to a} f(x) = L = \lim_{x \to a} h(x)\)</span>,</p>
+<p>então,</p>
+<p><span class="arithmatex">\(\displaystyle \lim_{x \to a} g(x) = L\)</span>.</p>
+<p>eg.:</p>
+<div class="arithmatex">\[
+\begin{align*}
+  \lim_{x \to 0} x^2.\left|\sin \frac{1}{x}\right| \\
+  &amp; \sin\frac{1}{x} \in [-1; 1] \therefore \left| \sin\frac{1}{x}\right| \in [0; 1] \\
+  = \lim_{x \to 0} x^2 . \left( 0 \le \left| \sin\frac{1}{x} \right| \le 1 \right) \\
+  = \lim_{x \to 0} \left[ 0 \le \left| x^2 . \sin\frac{1}{x}\right| \le x^2 \right] \\
+  \lim_{x \to 0} 0 \le \lim_{x\to0} \left| x^2 . \sin\frac{1}{x}\right| \le \lim_{x\to0} x^2 \\
+  0 \le \lim_{x\to0} \left| x^2 . \sin\frac{1}{x}\right| \le 0 \\
+  f(x) \le g(x) \le h(x) \\
+  \cancelto{0}{f(x)} \le g(x) \le \cancelto{0}{h(x)} \\
+  &amp; \therefore g(x) \to 0 \\
+  &amp; \therefore g(x) = \lim_{x\to0} \left| \sin\frac{1}{x}\right| = 0 \\
+\end{align*}
+\]</div>
+<p>Em modo simplificado:</p>
+<div class="arithmatex">\[\begin{align}
+&amp; \lim_{x \to 0} x^2.\left|\sin \frac{1}{x}\right| \\
+= &amp; \lim_{x \to 0} x^2.\lim_{x \to 0}\left|\sin \frac{1}{x}\right| \\
+= &amp; 0.\cancelto{[0;1]}{\lim_{x \to 0}\left|\sin \frac{1}{x}\right|} \\
+= &amp; 0.\forall[0;1] \\
+= &amp; 0 \\
+\end{align}\]</div>
+</li>
+</ol>
+<h4 id="12-calculo-de-limites">1.2 Cálculo de Limites</h4>
+<ul>
+<li><strong>Limites diretos</strong>: Substituímos o valor diretamente quando possível.</li>
+<li><strong>Técnicas para limites mais complexos</strong>:</li>
+<li>Fatoração: <span class="arithmatex">\(\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = \lim_{x \to 2} \frac{(x - 2)(x + 2)}{x - 2} = \lim_{x \to 2} (x + 2) = 4\)</span>.</li>
+<li>Racionalização: Para expressões com raízes.</li>
+<li><strong>Limites laterais</strong>: <span class="arithmatex">\(\lim_{x \to a^-}\)</span> (pela esquerda) e <span class="arithmatex">\(\lim_{x \to a^+}\)</span> (pela direita).</li>
+</ul>
+<h4 id="13-limites-no-infinito">1.3 Limites no Infinito</h4>
+<ul>
+<li><strong>Comportamento assintótico</strong>: Analisamos o que acontece quando <span class="arithmatex">\(x \to \infty\)</span> ou <span class="arithmatex">\(x \to -\infty\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(\lim_{x \to \infty} \frac{2x + 1}{x} = 2\)</span>, pois o termo de maior grau domina.</li>
+</ul>
+<h4 id="14-formas-indeterminadas">1.4 Formas Indeterminadas</h4>
+<ul>
+<li><strong>Tipos</strong>: <span class="arithmatex">\(\frac{0}{0}\)</span>, <span class="arithmatex">\(\frac{\infty}{\infty}\)</span>, etc.</li>
+<li><strong>Regra de L'Hôpital</strong>: Para <span class="arithmatex">\(\frac{0}{0}\)</span>, derive o numerador e o denominador. Exemplo: <span class="arithmatex">\(\lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = 1\)</span>.</li>
+</ul>
+<h2 id="assintotas">Assíntotas</h2>
+<h3 id="verticais">Verticais</h3>
+<ul>
+<li><strong>Definição</strong>: Uma reta vertical <span class="arithmatex">\(x = a\)</span> é uma assíntota vertical se <span class="arithmatex">\(\lim_{x \to a} f(x) = \pm \infty\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = \frac{1}{x - 2}\)</span> tem uma assíntota vertical em <span class="arithmatex">\(x = 2\)</span>.</li>
+<li><strong>Cálculo</strong>: Encontre os valores de <span class="arithmatex">\(x\)</span> que tornam o denominador zero.</li>
+<li><strong>Exemplo</strong>: Para <span class="arithmatex">\(f(x) = \frac{1}{x^2 - 4}\)</span>, as assíntotas verticais são <span class="arithmatex">\(x = 2\)</span> e <span class="arithmatex">\(x = -2\)</span>.</li>
+<li><strong>Gráfico</strong>: A função se aproxima de <span class="arithmatex">\(\infty\)</span> ou <span class="arithmatex">\(-\infty\)</span> conforme <span class="arithmatex">\(x\)</span> se aproxima de <span class="arithmatex">\(a\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = \frac{1}{x - 1}\)</span> tem uma assíntota vertical em <span class="arithmatex">\(x = 1\)</span>.</li>
+<li><strong>Gráfico</strong>: A função se aproxima de <span class="arithmatex">\(\infty\)</span> ou <span class="arithmatex">\(-\infty\)</span> conforme <span class="arithmatex">\(x\)</span> se aproxima de <span class="arithmatex">\(a\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = \frac{1}{x^2 - 4}\)</span> tem assíntotas verticais em <span class="arithmatex">\(x = 2\)</span> e <span class="arithmatex">\(x = -2\)</span>.</li>
+<li><strong>Gráfico</strong>: A função se aproxima de <span class="arithmatex">\(\infty\)</span> ou <span class="arithmatex">\(-\infty\)</span> conforme <span class="arithmatex">\(x\)</span> se aproxima de <span class="arithmatex">\(a\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = \frac{1}{x^2 - 4}\)</span> tem assíntotas verticais em <span class="arithmatex">\(x = 2\)</span> e <span class="arithmatex">\(x = -2\)</span>.</li>
+<li><strong>Gráfico</strong>: A função se aproxima de <span class="arithmatex">\(\infty\)</span> ou <span class="arithmatex">\(-\infty\)</span> conforme <span class="arithmatex">\(x\)</span> se aproxima de <span class="arithmatex">\(a\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = \frac{1}{x^2 - 4}\)</span> tem assíntotas verticais em <span class="arithmatex">\(x = 2\)</span> e <span class="arithmatex">\(x = -2\)</span>.</li>
+</ul>
+<h3 id="inclinadas-ou-obliquas">Inclinadas ou Oblíquas</h3>
+<ul>
+<li><strong>Definição</strong>: Uma reta <span class="arithmatex">\(y = mx + b\)</span> é uma assíntota oblíqua se <span class="arithmatex">\(\lim_{x \to \infty} [f(x) - (mx + b)] = 0\)</span>.</li>
+</ul>
+<div class="arithmatex">\[
+f(x) = y = \frac{2x^3}{x^2 + 4}
+\]</div>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<svg height="360pt" version="1.1" viewbox="0 0 720 360" width="720pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<rdf:rdf xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<cc:work>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+<dc:date>2025-05-10T03:00:57.447820</dc:date>
+<dc:format>image/svg+xml</dc:format>
+<dc:creator>
+<cc:agent>
+<dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title>
+</cc:agent>
+</dc:creator>
+</cc:work>
+</rdf:rdf>
+</metadata>
+<defs>
+<style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+</defs>
+<g id="figure_1">
+<g id="patch_1">
+<path d="M 0 360 
+L 720 360 
+L 720 0 
+L 0 0 
+L 0 360 
+z
+" style="fill: none"></path>
+</g>
+<g id="axes_1">
+<g id="patch_2">
+<path d="M 18.18 349.2 
+L 706.005 349.2 
+L 706.005 10.8 
+L 18.18 10.8 
+L 18.18 349.2 
+z
+" style="fill: none"></path>
+</g>
+<g id="matplotlib.axis_1">
+<g id="xtick_1">
+<g id="line2d_1">
+<defs>
+<path d="M 0 0 
+L 0 3.5 
+" id="mb20fbbb967" style="stroke: #000000; stroke-width: 0.8"></path>
+</defs>
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="18.18" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_1">
+<!-- −8 -->
+<g transform="translate(10.808906 194.598437) scale(0.1 -0.1)">
+<defs>
+<path d="M 678 2272 
+L 4684 2272 
+L 4684 1741 
+L 678 1741 
+L 678 2272 
+z
+" id="DejaVuSans-2212" transform="scale(0.015625)"></path>
+<path d="M 2034 2216 
+Q 1584 2216 1326 1975 
+Q 1069 1734 1069 1313 
+Q 1069 891 1326 650 
+Q 1584 409 2034 409 
+Q 2484 409 2743 651 
+Q 3003 894 3003 1313 
+Q 3003 1734 2745 1975 
+Q 2488 2216 2034 2216 
+z
+M 1403 2484 
+Q 997 2584 770 2862 
+Q 544 3141 544 3541 
+Q 544 4100 942 4425 
+Q 1341 4750 2034 4750 
+Q 2731 4750 3128 4425 
+Q 3525 4100 3525 3541 
+Q 3525 3141 3298 2862 
+Q 3072 2584 2669 2484 
+Q 3125 2378 3379 2068 
+Q 3634 1759 3634 1313 
+Q 3634 634 3220 271 
+Q 2806 -91 2034 -91 
+Q 1263 -91 848 271 
+Q 434 634 434 1313 
+Q 434 1759 690 2068 
+Q 947 2378 1403 2484 
+z
+M 1172 3481 
+Q 1172 3119 1398 2916 
+Q 1625 2713 2034 2713 
+Q 2441 2713 2670 2916 
+Q 2900 3119 2900 3481 
+Q 2900 3844 2670 4047 
+Q 2441 4250 2034 4250 
+Q 1625 4250 1398 4047 
+Q 1172 3844 1172 3481 
+z
+" id="DejaVuSans-38" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-38"></use>
+</g>
+</g>
+</g>
+<g id="xtick_2">
+<g id="line2d_2">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="104.158125" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_2">
+<!-- −6 -->
+<g transform="translate(96.787031 194.598437) scale(0.1 -0.1)">
+<defs>
+<path d="M 2113 2584 
+Q 1688 2584 1439 2293 
+Q 1191 2003 1191 1497 
+Q 1191 994 1439 701 
+Q 1688 409 2113 409 
+Q 2538 409 2786 701 
+Q 3034 994 3034 1497 
+Q 3034 2003 2786 2293 
+Q 2538 2584 2113 2584 
+z
+M 3366 4563 
+L 3366 3988 
+Q 3128 4100 2886 4159 
+Q 2644 4219 2406 4219 
+Q 1781 4219 1451 3797 
+Q 1122 3375 1075 2522 
+Q 1259 2794 1537 2939 
+Q 1816 3084 2150 3084 
+Q 2853 3084 3261 2657 
+Q 3669 2231 3669 1497 
+Q 3669 778 3244 343 
+Q 2819 -91 2113 -91 
+Q 1303 -91 875 529 
+Q 447 1150 447 2328 
+Q 447 3434 972 4092 
+Q 1497 4750 2381 4750 
+Q 2619 4750 2861 4703 
+Q 3103 4656 3366 4563 
+z
+" id="DejaVuSans-36" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-36"></use>
+</g>
+</g>
+</g>
+<g id="xtick_3">
+<g id="line2d_3">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="190.13625" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_3">
+<!-- −4 -->
+<g transform="translate(182.765156 194.598437) scale(0.1 -0.1)">
+<defs>
+<path d="M 2419 4116 
+L 825 1625 
+L 2419 1625 
+L 2419 4116 
+z
+M 2253 4666 
+L 3047 4666 
+L 3047 1625 
+L 3713 1625 
+L 3713 1100 
+L 3047 1100 
+L 3047 0 
+L 2419 0 
+L 2419 1100 
+L 313 1100 
+L 313 1709 
+L 2253 4666 
+z
+" id="DejaVuSans-34" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-34"></use>
+</g>
+</g>
+</g>
+<g id="xtick_4">
+<g id="line2d_4">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="276.114375" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_4">
+<!-- −2 -->
+<g transform="translate(268.743281 194.598437) scale(0.1 -0.1)">
+<defs>
+<path d="M 1228 531 
+L 3431 531 
+L 3431 0 
+L 469 0 
+L 469 531 
+Q 828 903 1448 1529 
+Q 2069 2156 2228 2338 
+Q 2531 2678 2651 2914 
+Q 2772 3150 2772 3378 
+Q 2772 3750 2511 3984 
+Q 2250 4219 1831 4219 
+Q 1534 4219 1204 4116 
+Q 875 4013 500 3803 
+L 500 4441 
+Q 881 4594 1212 4672 
+Q 1544 4750 1819 4750 
+Q 2544 4750 2975 4387 
+Q 3406 4025 3406 3419 
+Q 3406 3131 3298 2873 
+Q 3191 2616 2906 2266 
+Q 2828 2175 2409 1742 
+Q 1991 1309 1228 531 
+z
+" id="DejaVuSans-32" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-32"></use>
+</g>
+</g>
+</g>
+<g id="xtick_5">
+<g id="line2d_5">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_5">
+<!-- 0 -->
+<g transform="translate(358.91125 194.598437) scale(0.1 -0.1)">
+<defs>
+<path d="M 2034 4250 
+Q 1547 4250 1301 3770 
+Q 1056 3291 1056 2328 
+Q 1056 1369 1301 889 
+Q 1547 409 2034 409 
+Q 2525 409 2770 889 
+Q 3016 1369 3016 2328 
+Q 3016 3291 2770 3770 
+Q 2525 4250 2034 4250 
+z
+M 2034 4750 
+Q 2819 4750 3233 4129 
+Q 3647 3509 3647 2328 
+Q 3647 1150 3233 529 
+Q 2819 -91 2034 -91 
+Q 1250 -91 836 529 
+Q 422 1150 422 2328 
+Q 422 3509 836 4129 
+Q 1250 4750 2034 4750 
+z
+" id="DejaVuSans-30" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-30"></use>
+</g>
+</g>
+</g>
+<g id="xtick_6">
+<g id="line2d_6">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="448.070625" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_6">
+<!-- 2 -->
+<g transform="translate(444.889375 194.598437) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-32"></use>
+</g>
+</g>
+</g>
+<g id="xtick_7">
+<g id="line2d_7">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="534.04875" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_7">
+<!-- 4 -->
+<g transform="translate(530.8675 194.598437) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-34"></use>
+</g>
+</g>
+</g>
+<g id="xtick_8">
+<g id="line2d_8">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="620.026875" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_8">
+<!-- 6 -->
+<g transform="translate(616.845625 194.598437) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-36"></use>
+</g>
+</g>
+</g>
+<g id="xtick_9">
+<g id="line2d_9">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="706.005" xlink:href="#mb20fbbb967" y="180"></use>
+</g>
+</g>
+<g id="text_9">
+<!-- 8 -->
+<g transform="translate(702.82375 194.598437) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-38"></use>
+</g>
+</g>
+</g>
+</g>
+<g id="matplotlib.axis_2">
+<g id="ytick_1">
+<g id="line2d_10">
+<defs>
+<path d="M 0 0 
+L -3.5 0 
+" id="m20d1c41b8e" style="stroke: #000000; stroke-width: 0.8"></path>
+</defs>
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="324.204545"></use>
+</g>
+</g>
+<g id="text_10">
+<!-- −15 -->
+<g transform="translate(333.987813 328.003764) scale(0.1 -0.1)">
+<defs>
+<path d="M 794 531 
+L 1825 531 
+L 1825 4091 
+L 703 3866 
+L 703 4441 
+L 1819 4666 
+L 2450 4666 
+L 2450 531 
+L 3481 531 
+L 3481 0 
+L 794 0 
+L 794 531 
+z
+" id="DejaVuSans-31" transform="scale(0.015625)"></path>
+<path d="M 691 4666 
+L 3169 4666 
+L 3169 4134 
+L 1269 4134 
+L 1269 2991 
+Q 1406 3038 1543 3061 
+Q 1681 3084 1819 3084 
+Q 2600 3084 3056 2656 
+Q 3513 2228 3513 1497 
+Q 3513 744 3044 326 
+Q 2575 -91 1722 -91 
+Q 1428 -91 1123 -41 
+Q 819 9 494 109 
+L 494 744 
+Q 775 591 1075 516 
+Q 1375 441 1709 441 
+Q 2250 441 2565 725 
+Q 2881 1009 2881 1497 
+Q 2881 1984 2565 2268 
+Q 2250 2553 1709 2553 
+Q 1456 2553 1204 2497 
+Q 953 2441 691 2322 
+L 691 4666 
+z
+" id="DejaVuSans-35" transform="scale(0.015625)"></path>
+</defs>
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-31"></use>
+<use transform="translate(147.412109 0)" xlink:href="#DejaVuSans-35"></use>
+</g>
+</g>
+</g>
+<g id="ytick_2">
+<g id="line2d_11">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="276.136364"></use>
+</g>
+</g>
+<g id="text_11">
+<!-- −10 -->
+<g transform="translate(333.987813 279.935582) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-31"></use>
+<use transform="translate(147.412109 0)" xlink:href="#DejaVuSans-30"></use>
+</g>
+</g>
+</g>
+<g id="ytick_3">
+<g id="line2d_12">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="228.068182"></use>
+</g>
+</g>
+<g id="text_12">
+<!-- −5 -->
+<g transform="translate(340.350313 231.867401) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-2212"></use>
+<use transform="translate(83.789062 0)" xlink:href="#DejaVuSans-35"></use>
+</g>
+</g>
+</g>
+<g id="ytick_4">
+<g id="line2d_13">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="180"></use>
+</g>
+</g>
+<g id="text_13">
+<!-- 0 -->
+<g transform="translate(348.73 183.799219) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-30"></use>
+</g>
+</g>
+</g>
+<g id="ytick_5">
+<g id="line2d_14">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="131.931818"></use>
+</g>
+</g>
+<g id="text_14">
+<!-- 5 -->
+<g transform="translate(348.73 135.731037) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-35"></use>
+</g>
+</g>
+</g>
+<g id="ytick_6">
+<g id="line2d_15">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="83.863636"></use>
+</g>
+</g>
+<g id="text_15">
+<!-- 10 -->
+<g transform="translate(342.3675 87.662855) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-31"></use>
+<use transform="translate(63.623047 0)" xlink:href="#DejaVuSans-30"></use>
+</g>
+</g>
+</g>
+<g id="ytick_7">
+<g id="line2d_16">
+<g>
+<use style="stroke: #000000; stroke-width: 0.8" x="362.0925" xlink:href="#m20d1c41b8e" y="35.795455"></use>
+</g>
+</g>
+<g id="text_16">
+<!-- 15 -->
+<g transform="translate(342.3675 39.594673) scale(0.1 -0.1)">
+<use xlink:href="#DejaVuSans-31"></use>
+<use transform="translate(63.623047 0)" xlink:href="#DejaVuSans-35"></use>
+</g>
+</g>
+</g>
+</g>
+<g id="line2d_17">
+<path clip-path="url(#p5459e2b35b)" d="M 18.18 180 
+L 706.005 180 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_18">
+<path clip-path="url(#p5459e2b35b)" d="M 362.0925 349.2 
+L 362.0925 10.8 
+" style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"></path>
+</g>
+<g id="line2d_19">
+<path clip-path="url(#p5459e2b35b)" d="M 18.18 324.770053 
+L 32.217245 318.154718 
+L 46.25449 311.515637 
+L 60.291735 304.850587 
+L 74.32898 298.157147 
+L 88.366224 291.432717 
+L 102.403469 284.674555 
+L 116.440714 277.879848 
+L 130.477959 271.045859 
+L 144.515204 264.170166 
+L 158.552449 257.251077 
+L 172.589694 250.288315 
+L 186.626939 243.284142 
+L 200.664184 236.245186 
+L 214.701429 229.185385 
+L 228.738673 222.130672 
+L 242.775918 215.126268 
+L 256.813163 208.247611 
+L 270.850408 201.61553 
+L 284.887653 195.414172 
+L 298.924898 189.903978 
+L 312.962143 185.408991 
+L 326.999388 182.241447 
+L 341.036633 180.532853 
+L 355.073878 180.02078 
+L 369.111122 179.97922 
+L 383.148367 179.467147 
+L 397.185612 177.758553 
+L 411.222857 174.591009 
+L 425.260102 170.096022 
+L 439.297347 164.585828 
+L 453.334592 158.38447 
+L 467.371837 151.752389 
+L 481.409082 144.873732 
+L 495.446327 137.869328 
+L 509.483571 130.814615 
+L 523.520816 123.754814 
+L 537.558061 116.715858 
+L 551.595306 109.711685 
+L 565.632551 102.748923 
+L 579.669796 95.829834 
+L 593.707041 88.954141 
+L 607.744286 82.120152 
+L 621.781531 75.325445 
+L 635.818776 68.567283 
+L 649.85602 61.842853 
+L 663.893265 55.149413 
+L 677.93051 48.484363 
+L 691.967755 41.845282 
+L 706.005 35.229947 
+" style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"></path>
+</g>
+<g id="line2d_20">
+<path clip-path="url(#p5459e2b35b)" d="M 18.18 333.818182 
+L 32.217245 327.539889 
+L 46.25449 321.261596 
+L 60.291735 314.983302 
+L 74.32898 308.705009 
+L 88.366224 302.426716 
+L 102.403469 296.148423 
+L 116.440714 289.87013 
+L 130.477959 283.591837 
+L 144.515204 277.313544 
+L 158.552449 271.03525 
+L 172.589694 264.756957 
+L 186.626939 258.478664 
+L 200.664184 252.200371 
+L 214.701429 245.922078 
+L 228.738673 239.643785 
+L 242.775918 233.365492 
+L 256.813163 227.087199 
+L 270.850408 220.808905 
+L 284.887653 214.530612 
+L 298.924898 208.252319 
+L 312.962143 201.974026 
+L 326.999388 195.695733 
+L 341.036633 189.41744 
+L 355.073878 183.139147 
+L 369.111122 176.860853 
+L 383.148367 170.58256 
+L 397.185612 164.304267 
+L 411.222857 158.025974 
+L 425.260102 151.747681 
+L 439.297347 145.469388 
+L 453.334592 139.191095 
+L 467.371837 132.912801 
+L 481.409082 126.634508 
+L 495.446327 120.356215 
+L 509.483571 114.077922 
+L 523.520816 107.799629 
+L 537.558061 101.521336 
+L 551.595306 95.243043 
+L 565.632551 88.96475 
+L 579.669796 82.686456 
+L 593.707041 76.408163 
+L 607.744286 70.12987 
+L 621.781531 63.851577 
+L 635.818776 57.573284 
+L 649.85602 51.294991 
+L 663.893265 45.016698 
+L 677.93051 38.738404 
+L 691.967755 32.460111 
+L 706.005 26.181818 
+" style="fill: none; stroke-dasharray: 4,6.6; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 4"></path>
+</g>
+</g>
+</g>
+<defs>
+<clippath id="p5459e2b35b">
+<rect height="338.4" width="687.825" x="18.18" y="10.8"></rect>
+</clippath>
+</defs>
+</svg>
+<hr/>
+<h3 id="modulo-2-continuidade">Módulo 2: Continuidade</h3>
+<h4 id="21-definicao-de-continuidade">2.1 Definição de Continuidade</h4>
+<ul>
+<li>Uma função <span class="arithmatex">\(f(x)\)</span> é contínua em <span class="arithmatex">\(x = a\)</span> se:</li>
+<li><span class="arithmatex">\(f(a)\)</span> está definida.</li>
+<li><span class="arithmatex">\(\lim_{x \to a} f(x)\)</span> existe.</li>
+<li><span class="arithmatex">\(\lim_{x \to a} f(x) = f(a)\)</span>.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = x^2\)</span> é contínua em todos os reais.</li>
+</ul>
+<h4 id="22-tipos-de-descontinuidades">2.2 Tipos de Descontinuidades</h4>
+<ul>
+<li><strong>Removível</strong>: O limite existe, mas <span class="arithmatex">\(f(a)\)</span> não é igual ao limite ou não está definido.</li>
+<li><strong>De salto</strong>: Limites laterais diferentes.</li>
+<li><strong>Infinita</strong>: A função tende a <span class="arithmatex">\(\infty\)</span> ou <span class="arithmatex">\(-\infty\)</span>.</li>
+</ul>
+<h4 id="23-teorema-do-valor-intermediario">2.3 Teorema do Valor Intermediário</h4>
+<ul>
+<li>Se <span class="arithmatex">\(f\)</span> é contínua em <span class="arithmatex">\([a, b]\)</span>, ela assume todos os valores entre <span class="arithmatex">\(f(a)\)</span> e <span class="arithmatex">\(f(b)\)</span>.</li>
+</ul>
+<hr/>
+<h3 id="modulo-3-logaritmos">Módulo 3: Logaritmos</h3>
+<h4 id="31-introducao-aos-logaritmos">3.1 Introdução aos Logaritmos</h4>
+<ul>
+<li><strong>Definição</strong>: <span class="arithmatex">\(\log_a x = y\)</span> se <span class="arithmatex">\(a^y = x\)</span>.</li>
+<li><strong>Propriedades</strong>:</li>
+<li><span class="arithmatex">\(\log_a (xy) = \log_a x + \log_a y\)</span></li>
+<li><span class="arithmatex">\(\log_a \left(\frac{x}{y}\right) = \log_a x - \log_a y\)</span></li>
+<li><span class="arithmatex">\(\log_a (x^k) = k \log_a x\)</span></li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(\log_2 8 = 3\)</span>, pois <span class="arithmatex">\(2^3 = 8\)</span>.</li>
+</ul>
+<h4 id="32-logaritmo-natural">3.2 Logaritmo Natural</h4>
+<ul>
+<li><strong>Definição</strong>: <span class="arithmatex">\(\ln x = \log_e x\)</span>, onde <span class="arithmatex">\(e \approx 2,71828\)</span>.</li>
+<li><strong>O número <span class="arithmatex">\(e\)</span></strong>: Definido como <span class="arithmatex">\(\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n\)</span>.</li>
+</ul>
+<h4 id="33-resolucao-de-equacoes-logaritmicas">3.3 Resolução de Equações Logarítmicas</h4>
+<ul>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(\ln x + \ln (x + 1) = \ln 6\)</span></li>
+<li><span class="arithmatex">\(\ln (x (x + 1)) = \ln 6\)</span></li>
+<li><span class="arithmatex">\(x^2 + x = 6\)</span></li>
+<li><span class="arithmatex">\(x^2 + x - 6 = 0\)</span></li>
+<li>Soluções: <span class="arithmatex">\(x = 2\)</span> ou <span class="arithmatex">\(x = -3\)</span>, mas <span class="arithmatex">\(x &gt; 0\)</span>, então <span class="arithmatex">\(x = 2\)</span>.</li>
+</ul>
+<h4 id="34-logaritmos-e-limites">3.4 Logaritmos e Limites</h4>
+<ul>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(\lim_{x \to 0^+} \ln x = -\infty\)</span>.</li>
+</ul>
+<hr/>
+<h3 id="modulo-4-derivadas">Módulo 4: Derivadas</h3>
+<h4 id="41-introducao-as-derivadas">4.1 Introdução às Derivadas</h4>
+<ul>
+<li><strong>Definição</strong>: <span class="arithmatex">\(f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}\)</span>, a inclinação da tangente.</li>
+<li><strong>Exemplo</strong>: Para <span class="arithmatex">\(f(x) = x^2\)</span>, <span class="arithmatex">\(f'(x) = \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h} = 2x\)</span>.</li>
+</ul>
+<h4 id="42-regras-de-diferenciacao">4.2 Regras de Diferenciação</h4>
+<ul>
+<li><strong>Potências</strong>: <span class="arithmatex">\(\frac{d}{dx} x^n = n x^{n-1}\)</span></li>
+<li><strong>Produto</strong>: <span class="arithmatex">\(\frac{d}{dx} [f(x) g(x)] = f'(x) g(x) + f(x) g'(x)\)</span></li>
+<li><strong>Quociente</strong>: <span class="arithmatex">\(\frac{d}{dx} \left( \frac{f(x)}{g(x)} \right) = \frac{f'(x) g(x) - f(x) g'(x)}{[g(x)]^2}\)</span></li>
+<li><strong>Cadeia</strong>: <span class="arithmatex">\(\frac{d}{dx} [f(g(x))] = f'(g(x)) \cdot g'(x)\)</span></li>
+</ul>
+<h4 id="43-derivadas-de-funcoes-especificas">4.3 Derivadas de Funções Específicas</h4>
+<ul>
+<li><span class="arithmatex">\(\frac{d}{dx} e^x = e^x\)</span></li>
+<li><span class="arithmatex">\(\frac{d}{dx} \ln x = \frac{1}{x}\)</span></li>
+<li><span class="arithmatex">\(\frac{d}{dx} \sin x = \cos x\)</span></li>
+</ul>
+<h4 id="44-diferenciacao-implicita">4.4 Diferenciação Implícita</h4>
+<ul>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(x^2 + y^2 = 1\)</span></li>
+<li><span class="arithmatex">\(2x + 2y \frac{dy}{dx} = 0\)</span></li>
+<li><span class="arithmatex">\(\frac{dy}{dx} = -\frac{x}{y}\)</span></li>
+</ul>
+<h4 id="45-aplicacoes-das-derivadas">4.5 Aplicações das Derivadas</h4>
+<ul>
+<li><strong>Máximos e mínimos</strong>: <span class="arithmatex">\(f'(x) = 0\)</span> para pontos críticos.</li>
+<li><strong>Exemplo</strong>: <span class="arithmatex">\(f(x) = x^3 - 3x\)</span>, <span class="arithmatex">\(f'(x) = 3x^2 - 3\)</span>, pontos críticos em <span class="arithmatex">\(x = 1\)</span> e <span class="arithmatex">\(x = -1\)</span>.</li>
+</ul>
+<hr/>
+<h3 id="conexoes-entre-os-modulos">Conexões entre os Módulos</h3>
+<ul>
+<li><strong>Limites e Derivadas</strong>: A derivada é definida como um limite.</li>
+<li><strong>Logaritmos e Derivadas</strong>: <span class="arithmatex">\(\ln x\)</span> surge na derivada de funções exponenciais.</li>
+<li><strong>Continuidade e Derivadas</strong>: Se <span class="arithmatex">\(f\)</span> é derivável em <span class="arithmatex">\(a\)</span>, ela é contínua em <span class="arithmatex">\(a\)</span>.</li>
+</ul>
+<hr/>
+<h3 id="exercicios-praticos">Exercícios Práticos</h3>
+<ol>
+<li><strong>Limites</strong>: Calcule <span class="arithmatex">\(\lim_{x \to 1} \frac{x^2 - 1}{x - 1}\)</span>.</li>
+<li><strong>Continuidade</strong>: <span class="arithmatex">\(f(x) = \frac{x^2 - 4}{x - 2}\)</span> é contínua em <span class="arithmatex">\(x = 2\)</span>?</li>
+<li><strong>Logaritmos</strong>: Resolva <span class="arithmatex">\(\log_3 (x + 2) = 2\)</span>.</li>
+<li><strong>Derivadas</strong>: Encontre a derivada de <span class="arithmatex">\(f(x) = x^2 \ln x\)</span>.</li>
+</ol>
+<hr/>
+<h3 id="conclusao">Conclusão</h3>
+<p>Este curso oferece uma base sólida em cálculo, começando com limites, explorando continuidade e logaritmos, e finalizando com derivadas. Cada módulo conecta-se ao próximo, garantindo uma compreensão clara e progressiva. Se precisar de mais detalhes ou ajuda com exercícios, é só avisar!</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2025 02:59:59">May 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../versions/2024.2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2024.2">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2024.2
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../logic/history/" class="md-footer__link md-footer__link--next" aria-label="Next: História">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                História
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking", "content.tabs.link", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+      
+        <script src="https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+      
+        <script src="../../termynal.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
